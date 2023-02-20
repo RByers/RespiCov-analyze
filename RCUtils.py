@@ -25,19 +25,18 @@ primer_hits_to_print = 0
 
 aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
 
+
 def expandAmbiguity(dna):
-    if len(dna) == 1:
-        m = IUPACData.ambiguous_dna_values.get(dna)
-        if m == None:
-            return [dna]
-        return [Seq(c) for c in m]
-    head = expandAmbiguity(dna[:-1])
-    tail = expandAmbiguity(dna[-1:])
-    r = []
-    for h in head:
-        for t in tail:
-            r.append(h+t)
-    return r
+    """Expand an ambiguous DNA sequence into all possible sequences"""
+    seqs = [dna]
+    for i, c in enumerate(dna):
+        if c in IUPACData.ambiguous_dna_values:
+            newSeqs = []
+            for s in seqs:
+                for n in IUPACData.ambiguous_dna_values[c]:
+                    newSeqs.append(s[:i] + n + s[i+1:])
+            seqs = newSeqs
+    return seqs
 
 def readPrimers(path):
     primers = []
