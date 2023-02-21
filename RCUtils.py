@@ -25,9 +25,8 @@ primer_hits_to_print = 0
 
 aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
 
-
+# Expand an ambiguous DNA sequence into all possible sequences
 def expandAmbiguity(dna):
-    """Expand an ambiguous DNA sequence into all possible sequences"""
     seqs = [dna]
     for i, c in enumerate(dna):
         if c in IUPACData.ambiguous_dna_values:
