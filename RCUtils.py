@@ -4,9 +4,11 @@ from Bio import SeqIO
 from Bio import Align
 from Bio.Data import IUPACData
 from dataclasses import dataclass
+import random
 
 # Look for at least an 80% match against primers
 # Below about 70% we seem to get huge numbers of matches just by chance
+# The Random primer gets a 76% match.
 MATCH_THRESHOLD = 0.80
 
 # Hits which overlap atleast 80% of a higher-score hit aren't reported
@@ -49,9 +51,15 @@ def readPrimers(path):
         else:
             primers.append(primer)
         
+    # Add a random primer as a negative control
+    minLen = min(len(p.seq) for p in primers)
+    seq = Seq("".join([random.choice("ACGT") for i in range(minLen)]))
+    primers.append(SeqRecord(seq, id="random", name="random", description="Random control"))
+
     # Precompute reverse complements for a ~5% speedup over using 'strand'
     for primer in primers:
         primer.rcSeq = primer.seq.reverse_complement()
+
     return primers
 
 # Get the amount of overlap between two hits. 1.0 means perfect overlap, 0.0 means not overlapping.
