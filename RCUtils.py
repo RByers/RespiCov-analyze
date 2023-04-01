@@ -1,3 +1,4 @@
+import os
 from Bio.Seq import Seq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
@@ -5,6 +6,7 @@ from Bio import Align
 from Bio.Data import IUPACData
 from dataclasses import dataclass
 import random
+import gzip
 
 # Look for at least an 80% match against primers
 # Below about 70% we seem to get huge numbers of matches just by chance
@@ -13,6 +15,34 @@ MATCH_THRESHOLD = 0.80
 
 # Hits which overlap atleast 80% of a higher-score hit aren't reported
 OVERLAP_THRESHOLD = 0.80
+
+# Get reads from a gzipped fastQ file
+def readFastQ(path):
+    with gzip.open(path, "rt") as handle:
+        for record in SeqIO.parse(handle, "fastq"):
+            yield record
+
+def getFastQFiles(base, subdir):
+    fastQDir = os.path.join(base, subdir)
+    for file in sorted(filter(lambda f: f.endswith(".fastq.gz"), os.listdir(fastQDir))):
+        yield os.path.join(fastQDir, file)
+
+def getAllFastQDirs(base):
+    for dir in sorted(os.listdir(base)):
+        if dir.startswith("barcode"):
+            yield dir
+
+# Return all raw reads in a sub-directory on their own
+def getReads(base, subdir):
+    for fastQPath in getFastQFiles(base, subdir):
+        print ("Reading: " + fastQPath)
+        for read in readFastQ(fastQPath):
+            yield read
+
+def getAllReads(base):
+    for subdir in getAllFastQDirs(base):
+        for read in getReads(base, subdir):
+            yield read
 
 @dataclass
 class Hit():
@@ -114,3 +144,47 @@ def computePrimerHits(read, primers, allowOverlaps=False):
         if not redundant:
             trimmedHits.append(hits[i])
     return trimmedHits
+
+@dataclass
+class GenomeHit():
+    target: SeqRecord
+    strand: str
+    score: int
+    readStart: int = -1     # read index, 0-based
+    readEnd: int = -1       # read index past the end of the alignment
+    targetStart: int = -1
+    targetEnd: int = -1
+
+GENOME_SCORE_THRESHOLD = 100
+
+# Given a sequencing read, look for matches to any of the given genomes.
+# Rerturns either a single GenomeHit or None
+def genomeMatch(read, genomes):
+    # Using a gap score of -2 is almost twice as slow as -1, but avoids a lot of false positives
+    al = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=-1, gap_score=-2)
+    hits = []
+    for target in genomes:
+        for strand in ("+", "-"):
+            # Find the single best alignment
+            # Scoring is about 10x faster than aligning
+            score = al.score(read.seq, target.seq, strand)
+            if score >= GENOME_SCORE_THRESHOLD:
+                # Resolve the full alignment
+                alignment = al.align(read.seq, target.seq, strand)[0]
+                assert alignment.score == score
+                hit = GenomeHit(
+                    target=target, 
+                    score=score,
+                    strand=strand,
+                    readStart = int(alignment.coordinates[0][0]),
+                    readEnd = int(alignment.coordinates[0][-1]),
+                    targetStart = int(alignment.coordinates[1][0]),
+                    targetEnd = int(alignment.coordinates[1][-1])
+                    )
+                assert hit.readStart < len(read.seq) and hit.readEnd <= len(read.seq), \
+                    "Start %d, End %d, Len %d\n%s" % \
+                    (alignment.readStart, alignment.readEnd, len(read.seq), alignment)
+                hits.append(hit)
+
+    hits.sort(key=lambda h: h.score, reverse=True)
+    return hits
