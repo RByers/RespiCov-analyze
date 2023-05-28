@@ -4,9 +4,13 @@ from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 from Bio import Align
 from Bio.Data import IUPACData
+from IPython.display import clear_output 
 from dataclasses import dataclass
 import random
 import gzip
+import time
+import json
+
 
 # Look for at least an 80% match against primers
 # Below about 70% we seem to get huge numbers of matches just by chance
@@ -27,21 +31,20 @@ def getFastQFiles(base, subdir):
     for file in sorted(filter(lambda f: f.endswith(".fastq.gz"), os.listdir(fastQDir))):
         yield os.path.join(fastQDir, file)
 
-def getAllFastQDirs(base):
-    for dir in sorted(os.listdir(base)):
+def getAllFastQDirs(fastQBaseDir):
+    for dir in sorted(os.listdir(fastQBaseDir)):
         if dir.startswith("barcode"):
-            yield dir
+            yield os.path.join(fastQBaseDir, dir)
 
 # Return all raw reads in a sub-directory on their own
-def getReads(base, subdir):
-    for fastQPath in getFastQFiles(base, subdir):
-        print ("Reading: " + fastQPath)
+def getReads(fastQDir):
+    for (fastQPath,_) in getFastQAndHitsFiles(fastQDir):
         for read in readFastQ(fastQPath):
             yield read
 
-def getAllReads(base):
-    for subdir in getAllFastQDirs(base):
-        for read in getReads(base, subdir):
+def getAllReads(fastQBaseDir):
+    for fastQDir in getAllFastQDirs(fastQBaseDir):
+        for read in getReads(fastQDir):
             yield read
 
 @dataclass
@@ -89,6 +92,11 @@ def readPrimers(path):
     # Precompute reverse complements for a ~5% speedup over using 'strand'
     for primer in primers:
         primer.rcSeq = primer.seq.reverse_complement()
+
+    # Store primer indicies for efficient serialization
+    for i, primer in enumerate(primers):
+        primer.index = i
+        primer.baseName = primer.description[:primer.description.rindex(' ')]
 
     return primers
 
@@ -144,6 +152,66 @@ def computePrimerHits(read, primers, allowOverlaps=False):
         if not redundant:
             trimmedHits.append(hits[i])
     return trimmedHits
+
+
+def serializeHit(hit):
+    return [hit.primer.index, hit.start, hit.end, hit.rev, hit.mr]
+
+def deserializeHit(hitBuf, primers):
+    return Hit(primer=primers[hitBuf[0]], start=hitBuf[1], end=hitBuf[2], rev=hitBuf[3], mr=hitBuf[4])
+
+def getFastQAndHitsFiles(fastQDir):
+    for file in sorted(filter(lambda f: f.endswith(".fastq.gz"), os.listdir(fastQDir))):
+        fastQPath = os.path.join(fastQDir, file)
+        yield (fastQPath, fastQPath.removesuffix(".fastq.gz")+"-hits.json")
+
+# Find primer matches and save them to files if files don't already exist
+def generateHitsFile(primers, fastQDir, overwrite=False):
+    for (fastQPath, hitsPath) in getFastQAndHitsFiles(fastQDir):
+        if overwrite or not os.path.exists(hitsPath):
+            print("Processing ", os.path.basename(fastQPath), end="")
+            reads = 0
+            start = time.process_time()
+            serializedHitsPerRead = []
+            for read in readFastQ(fastQPath):
+                reads += 1
+                if reads % 100 == 0:
+                    print(".",end="")
+                hits = computePrimerHits(read, primers)
+                serializedHitsPerRead.append([serializeHit(hit) for hit in hits])
+
+            elapsed = time.process_time() - start
+            print("  %.2fs" % elapsed)
+
+            with open(hitsPath, "w") as f:
+                json.dump(serializedHitsPerRead, f)
+        else:
+            print("Found ", os.path.basename(hitsPath))
+
+# Stream all reads for a given subdirectory, along with the pre-computed primer matches
+def getPrimerMatches(primers, fastQDir):
+    for (fastQPath,hitsPath) in getFastQAndHitsFiles(fastQDir):
+        with open(hitsPath, "r") as hitsFile:
+            serializedHitsPerRead = json.load(hitsFile)
+            
+        for (readIdx,read) in enumerate(readFastQ(fastQPath)):
+            hits = []
+            for hitBuf in serializedHitsPerRead[readIdx]:
+                hit = deserializeHit(hitBuf, primers)
+                assert hit.start < len(read.seq)
+                assert hit.end <= len(read.seq)
+                hits.append(hit)
+            yield (read, hits)
+                
+def getAllPrimerMatches(primers, fastQBaseDir):
+    for fastQDir in getAllFastQDirs(fastQBaseDir):
+        for (r,h) in getPrimerMatches(primers, fastQDir):
+            yield (os.path.basename(fastQDir), r, h)
+
+# Actually generate all the hits files
+def generateAllHitsFiles(primers, fastQBaseDir):
+    for fastQDir in getAllFastQDirs(fastQBaseDir):
+        generateHitsFile(primers, fastQDir)
 
 @dataclass
 class GenomeHit():
