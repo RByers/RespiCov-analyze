@@ -58,8 +58,6 @@ class Hit():
 # Set this to print alignments for debugging
 primer_hits_to_print = 0
 
-aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
-
 # Expand an ambiguous DNA sequence into all possible sequences
 def expandAmbiguity(dna):
     seqs = [dna]
@@ -112,6 +110,7 @@ def computeOverlap(hit1, hit2):
 # If allowOverlaps is true then overlapping results will be retained as long as their primer ID
 # isn't the same up until the first "-" character.
 def computePrimerHits(read, primers, allowOverlaps=False):
+    aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
     hits = []
     global primer_hits_to_print
     for primer in primers:
@@ -212,6 +211,25 @@ def getAllPrimerMatches(primers, fastQBaseDir):
 def generateAllHitsFiles(primers, fastQBaseDir):
     for fastQDir in getAllFastQDirs(fastQBaseDir):
         generateHitsFile(primers, fastQDir)
+
+def getPrimerPairs(primers, fastQBaseDir, subdir=None):
+    if subdir:
+        gen = ((subdir, read, hits) for (read, hits) in getPrimerMatches(primers, os.path.join(fastQBaseDir, subdir)))
+    else:
+        gen = getAllPrimerMatches(primers, fastQBaseDir)
+    for (subdir, read, hits) in gen:
+        for hit1 in hits:
+            if not hit1.rev:
+                desc = hit1.primer.description[:hit1.primer.description.rindex(' ')]
+                for hit2 in hits:
+                    if hit2.rev and hit1.primer.baseName == hit2.primer.baseName \
+                            and hit1.primer.description != hit2.primer.description:
+                        span = hit2.start - hit1.end - 1 if hit2.start > hit1.start else hit1.start - hit2.end - 1
+                        (p1,p2) = (hit1.primer.description, hit2.primer.description)
+                        if len(p1) > len(p2) or (len(p1) == len(p2) and p1 > p2):
+                            (p1,p2) = (p2,p1)
+                        pairname = p1 + "/" + p2[p2.rindex(" ")+1:]
+                        yield (subdir, read, hit1, hit2, span, pairname)
 
 @dataclass
 class GenomeHit():
