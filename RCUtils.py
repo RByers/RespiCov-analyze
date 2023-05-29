@@ -1,5 +1,6 @@
 import os
 from Bio.Seq import Seq
+from Bio.Seq import MutableSeq
 from Bio.SeqRecord import SeqRecord
 from Bio import SeqIO
 from Bio import Align
@@ -115,14 +116,16 @@ def computePrimerHits(read, primers, allowOverlaps=False):
     global primer_hits_to_print
     for primer in primers:
         for query in (primer.seq, primer.rcSeq):
-            # Find the single best alignment
-            # Scoring seems to be ~10x faster than finding alignments
-            score = aligner.score(read.seq, query)
-            mr = round(score / len(query), ndigits=2)
-            if mr >= MATCH_THRESHOLD:
-                alignment = aligner.align(read.seq, query)[0]
+            # Find all alignments with a score above the threshold
+            seqToMatch = read.seq
+            while True:
+                # Scoring seems to be ~10x faster than finding alignments
+                score = aligner.score(seqToMatch, query)
+                mr = round(score / len(query), ndigits=2)
+                if mr < MATCH_THRESHOLD:
+                    break
+                alignment = aligner.align(seqToMatch, query)[0]
                 assert alignment.score == score
-                # TODO consider looking for the same primer elsewhere by masking the match?
                 if primer_hits_to_print > 0:
                     print("Match: %.2f %s%s" % (mr, primer.description, "" if query==primer.seq else " (rev)"))
                     print(alignment)
@@ -137,6 +140,11 @@ def computePrimerHits(read, primers, allowOverlaps=False):
                     "Start %d, End %d, Len %d\n%s" % \
                     (alignment.start, alignment.end, len(read.seq), alignment)
                 hits.append(hit)
+
+                # Mask out the matched region
+                if seqToMatch==read.seq:
+                    seqToMatch=MutableSeq(read.seq)
+                seqToMatch[hit.start:hit.end] = "N" * (hit.end-hit.start)
     # Remove redundant hits that are lower scoring
     hits.sort(key=lambda h: h.mr, reverse=True)
     trimmedHits = []
