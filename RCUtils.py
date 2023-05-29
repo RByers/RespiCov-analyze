@@ -220,6 +220,8 @@ def generateAllHitsFiles(primers, fastQBaseDir):
     for fastQDir in getAllFastQDirs(fastQBaseDir):
         generateHitsFile(primers, fastQDir)
 
+# Stream all plausible primer pairs
+# This may include multiple overlapping pairs for a given read
 def getPrimerPairs(primers, fastQBaseDir, subdir=None):
     if subdir:
         gen = ((subdir, read, hits) for (read, hits) in getPrimerMatches(primers, os.path.join(fastQBaseDir, subdir)))
