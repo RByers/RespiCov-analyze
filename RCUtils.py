@@ -158,6 +158,7 @@ def computePrimerHits(read, primers, allowOverlaps=False):
                     break
         if not redundant:
             trimmedHits.append(hits[i])
+    trimmedHits.sort(key=lambda h: h.start)
     return trimmedHits
 
 
