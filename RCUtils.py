@@ -37,6 +37,15 @@ def getAllFastQDirs(fastQBaseDir):
         if dir.startswith("barcode"):
             yield os.path.join(fastQBaseDir, dir)
 
+# Given a dictionary of sample name / fastq directory pairs, return a stream of
+# (sample name, fastq directory) pairs
+def getAllSampleDirs(fastQBaseDirs):
+    for (samplePrefix, fastQBaseDir) in fastQBaseDirs.items():
+        if samplePrefix:
+            samplePrefix += "-"
+            for fastQDir in getAllFastQDirs(fastQBaseDir):
+                yield (samplePrefix + os.path.basename(fastQDir), fastQDir)
+
 # Return all raw reads in a sub-directory on their own
 def getReads(fastQDir):
     for (fastQPath,_) in getFastQAndHitsFiles(fastQDir):
@@ -210,11 +219,18 @@ def getPrimerMatches(primers, fastQDir):
                 assert hit.end <= len(read.seq)
                 hits.append(hit)
             yield (read, hits)
-                
-def getAllPrimerMatches(primers, fastQBaseDir):
-    for fastQDir in getAllFastQDirs(fastQBaseDir):
-        for (r,h) in getPrimerMatches(primers, fastQDir):
-            yield (os.path.basename(fastQDir), r, h)
+
+# Given a list of primers and a dictionary of sample prefixes to directories,
+# stream tuples of (sample, read, hit) values for all reads in all samples.
+# If given just a single string for fastQBaseDirs, then process just that directory
+# with no sample prefix.      
+def getAllPrimerMatches(primers, fastQBaseDirs):
+    if isinstance(fastQBaseDirs, str):
+        fastQBaseDirs = {"": fastQBaseDirs}
+    
+    for (sample, fastQDir) in getAllSampleDirs(fastQBaseDirs):
+        for (read ,hit) in getPrimerMatches(primers, fastQDir):
+            yield (sample, read, hit)
 
 # Actually generate all the hits files
 def generateAllHitsFiles(primers, fastQBaseDir):
@@ -243,7 +259,7 @@ def getPrimerPairs(primers, fastQBaseDir, subdir=None):
                         yield (subdir, read, hit1, hit2, span, pairname)
 
 @dataclass
-class GenomeHit():
+class SeqHit():
     target: SeqRecord
     strand: str
     score: int
@@ -252,24 +268,24 @@ class GenomeHit():
     targetStart: int = -1
     targetEnd: int = -1
 
-GENOME_SCORE_THRESHOLD = 100
+SEQ_SCORE_THRESHOLD = 100
 
-# Given a sequencing read, look for matches to any of the given genomes.
-# Rerturns either a single GenomeHit or None
-def genomeMatch(read, genomes):
+# Given a sequencing read, look for matches to any of the given sequences.
+# Rerturns a list of SeqHits
+def seqMatch(read, seqs):
     # Using a gap score of -2 is almost twice as slow as -1, but avoids a lot of false positives
     al = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=-1, gap_score=-2)
     hits = []
-    for target in genomes:
+    for target in seqs:
         for strand in ("+", "-"):
             # Find the single best alignment
             # Scoring is about 10x faster than aligning
             score = al.score(read.seq, target.seq, strand)
-            if score >= GENOME_SCORE_THRESHOLD:
+            if score >= SEQ_SCORE_THRESHOLD:
                 # Resolve the full alignment
                 alignment = al.align(read.seq, target.seq, strand)[0]
                 assert alignment.score == score
-                hit = GenomeHit(
+                hit = SeqHit(
                     target=target, 
                     score=score,
                     strand=strand,
