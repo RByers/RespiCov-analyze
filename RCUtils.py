@@ -104,7 +104,8 @@ def readPrimers(path):
     # Store primer indicies for efficient serialization
     for i, primer in enumerate(primers):
         primer.index = i
-        primer.baseName = primer.description[:primer.description.rindex(' ')]
+        if ' ' in primer.description:
+            primer.baseName = primer.description[:primer.description.rindex(' ')]
 
     return primers
 
