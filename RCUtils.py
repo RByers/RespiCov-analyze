@@ -80,8 +80,10 @@ def expandAmbiguity(dna):
             seqs = newSeqs
     return seqs
 
-def readPrimers(path):
+def readPrimers(path, display=False):
     primers = []
+    if display:
+        print("Reading primers: " + path)
     for primer in SeqIO.parse(path, "fasta"):
         # The PairwiseAligner can't handle ambiguity codes, so expand out to multiple records
         seqs = expandAmbiguity(primer.seq)
@@ -91,7 +93,14 @@ def readPrimers(path):
                 primers.append(SeqRecord(s, id=primer.id + sfx, name=primer.name + sfx, description=primer.description + sfx))
         else:
             primers.append(primer)
-        
+        if display:
+            print("  " + primer.description, end="")
+            if len(seqs) > 1:
+                print(" (%d variations)" % len(seqs), end="")
+            print()
+    if display:
+        print("Read %d primers" % len(primers))
+
     # Add a random primer as a negative control
     minLen = min(len(p.seq) for p in primers)
     seq = Seq("".join([random.choice("ACGT") for i in range(minLen)]))
