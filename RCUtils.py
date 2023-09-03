@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from Bio.Seq import Seq
 from Bio.Seq import MutableSeq
 from Bio.SeqRecord import SeqRecord
@@ -20,6 +21,9 @@ MATCH_THRESHOLD = 0.80
 
 # Hits which overlap atleast 80% of a higher-score hit aren't reported
 OVERLAP_THRESHOLD = 0.80
+
+# Use a fixed random seed for reproducibility
+rnd = random.Random(4200)
 
 # Get reads from a gzipped fastQ file
 def readFastQ(path):
@@ -103,7 +107,7 @@ def readPrimers(path, display=False):
 
     # Add a random primer as a negative control
     minLen = min(len(p.seq) for p in primers)
-    seq = Seq("".join([random.choice("ACGT") for i in range(minLen)]))
+    seq = Seq("".join([rnd.choice("ACGT") for i in range(minLen)]))
     primers.append(SeqRecord(seq, id="random", name="random", description="Random control"))
 
     # Precompute reverse complements for a ~5% speedup over using 'strand'
@@ -126,11 +130,14 @@ def computeOverlap(hit1, hit2):
         min(len(hit1.primer),len(hit2.primer))
     return o if o > 0 else 0
 
+def getPrimerAligner():
+    return Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
+
 # Given a sequencing read, compute and return a list of primer match hits
 # If allowOverlaps is true then overlapping results will be retained as long as their primer ID
 # isn't the same up until the first "-" character.
 def computePrimerHits(read, primers, allowOverlaps=False):
-    aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
+    aligner = getPrimerAligner()
     hits = []
     global primer_hits_to_print
     for primer in primers:
@@ -180,6 +187,29 @@ def computePrimerHits(read, primers, allowOverlaps=False):
     trimmedHits.sort(key=lambda h: h.start)
     return trimmedHits
 
+# Given an alignment, extend it to completely cover the query
+# Really what we want is a "semi-global" alignment, but that's not supported by Biopython.
+# This gets us more-or-less the same effect, mainly for visualizing alignments. 
+def extendAlignment(alignment):
+    # Only works for forward alignments for now
+    assert alignment.coordinates[1][0] < alignment.coordinates[1][-1]
+
+    # Extend the ends of alignment to cover as much of the query as possible
+    queryHead = min(alignment.coordinates[1][0], alignment.coordinates[0][0])
+    queryTail = min(
+        len(alignment.sequences[1]) - alignment.coordinates[1][-1],
+        len(alignment.sequences[0]) - alignment.coordinates[0][-1])
+    alignment.coordinates[0][0] -= queryHead
+    alignment.coordinates[1][0] -= queryHead
+    alignment.coordinates[0][-1] += queryTail
+    alignment.coordinates[1][-1] += queryTail
+
+    # Extend the alignment with gaps to ensure the entire query is covered,
+    # for the case where the query runs off the start/end of the target.
+    if(alignment.coordinates[1][0] > 0):
+        alignment.coordinates = np.c_[[0,0], alignment.coordinates]
+    if(alignment.coordinates[1][-1] < len(alignment.sequences[1])):
+        alignment.coordinates = np.c_[alignment.coordinates, [len(alignment.sequences[0]), len(alignment.sequences[1])]]
 
 def serializeHit(hit):
     return [hit.primer.index, hit.start, hit.end, hit.rev, hit.mr]
