@@ -31,8 +31,14 @@ def readFastQ(path):
         for record in SeqIO.parse(handle, "fastq"):
             yield record
 
-def getFastQFiles(base, subdir):
-    fastQDir = os.path.join(base, subdir)
+def readFastQDirs(fastQDirs):
+    for fastQDir in fastQDirs:
+        for fastQPath in getFastQFiles(fastQDir):
+            for read in readFastQ(fastQPath):
+                yield read
+
+def getFastQFiles(base, subdir=None):
+    fastQDir = os.path.join(base, subdir) if subdir else base
     for file in sorted(filter(lambda f: f.endswith(".fastq.gz"), os.listdir(fastQDir))):
         yield os.path.join(fastQDir, file)
 
@@ -141,7 +147,10 @@ def computePrimerHits(read, primers, allowOverlaps=False):
     hits = []
     global primer_hits_to_print
     for primer in primers:
-        for query in (primer.seq, primer.rcSeq):
+        seqs = [primer.seq]
+        if hasattr(primer,'rcSeq'):
+            seqs.append(primer.rcSeq)
+        for query in seqs:
             # Find all alignments with a score above the threshold
             seqToMatch = read.seq
             while True:
