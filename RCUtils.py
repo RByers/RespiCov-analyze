@@ -142,7 +142,7 @@ def getPrimerAligner():
 # Given a sequencing read, compute and return a list of primer match hits
 # If allowOverlaps is true then overlapping results will be retained as long as their primer ID
 # isn't the same up until the first "-" character.
-def computePrimerHits(read, primers, allowOverlaps=False):
+def computePrimerHits(read, primers, allowOverlaps=False, matchThreshold=MATCH_THRESHOLD):
     aligner = getPrimerAligner()
     hits = []
     global primer_hits_to_print
@@ -157,7 +157,7 @@ def computePrimerHits(read, primers, allowOverlaps=False):
                 # Scoring seems to be ~10x faster than finding alignments
                 score = aligner.score(seqToMatch, query)
                 mr = round(score / len(query), ndigits=2)
-                if mr < MATCH_THRESHOLD:
+                if mr < matchThreshold:
                     break
                 alignment = aligner.align(seqToMatch, query)[0]
                 assert alignment.score == score
