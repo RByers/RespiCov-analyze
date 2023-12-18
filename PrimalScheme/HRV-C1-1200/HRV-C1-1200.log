@@ -1,0 +1,871 @@
+2023-12-18 03:00:02,458 - DEBUG - primalscheme version 1.4.1
+2023-12-18 03:00:02,458 - INFO - References:
+ - EF077279.1
+ - NC_038878.1
+ - OR726587.1
+ - OM001354.1
+ - OM001407.1
+ - OK539509.1
+ - OL133760.1
+ - OK017918.1
+ - MZ670576.1
+ - MZ268706.1
+ - MZ268720.1
+ - MZ322915.1
+ - MW969527.1
+2023-12-18 03:00:02,459 - INFO - Primary reference for coordinate system: EF077279.1
+2023-12-18 03:00:02,459 - INFO - Considering primers from all references
+2023-12-18 03:00:02,459 - DEBUG - MuliplexScheme
+Prefix: HRV-C1-1200
+Amplicon size range: 1140 - 1260
+Target overlap: 0
+Primary only (pinned): False
+References:
+ - EF077279.1
+ - NC_038878.1
+ - OR726587.1
+ - OM001354.1
+ - OM001407.1
+ - OK539509.1
+ - OL133760.1
+ - OK017918.1
+ - MZ670576.1
+ - MZ268706.1
+ - MZ268720.1
+ - MZ322915.1
+ - MW969527.1
+2023-12-18 03:00:02,459 - DEBUG - Region 1, pool 1, left_limit 0, slice_start 0, right_limit 6944
+2023-12-18 03:00:02,460 - DEBUG - Finding primers for slice 0 to 1259
+2023-12-18 03:00:05,886 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+ACGGTCAAGCACTTCTGTTTCC EF077279.1
+ACGGTCAAGCACTTCTGTTTCC NC_038878.1
+ACGGTCAAGCACTTCTGTTTCC OR726587.1
+ACGGTCAAGCACTTCTGTTTCC OM001354.1
+ACGGTCAAGCACTTCTGTTTCC OM001407.1
+ACGGTCAAGCACTTCTGTTTCC OK539509.1
+ACGGTCAAGCACTTCTGTTTCC OL133760.1
+ACGGTCAAGCACTTCTGTTTCC OK017918.1
+ACGGTCAAGCACTTCTGTTTCC MZ670576.1
+ACGGTCAAGCACTTCTGTTTCC MZ268706.1
+ACGGTCAAGCACTTCTGTTTCC MZ268720.1
+ACGGTCAAGCACTTCTGTTTCC MZ322915.1
+ACGGTCAAGCACTTCTGTTTCC MW969527.1
+********************** Cigar
+2023-12-18 03:00:05,887 - DEBUG - LEFT candidate 0: *picked, base pen 1.002, combined pen 1.002, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,888 - DEBUG - LEFT candidate 1: base pen 1.144, combined pen 1.144, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,889 - DEBUG - LEFT candidate 2: base pen 1.951, combined pen 1.951, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,890 - DEBUG - LEFT candidate 3: base pen 2.131, combined pen 2.131, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,890 - DEBUG - LEFT candidate 4: base pen 2.576, combined pen 2.576, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,891 - DEBUG - LEFT candidate 5: base pen 2.892, combined pen 2.892, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,892 - DEBUG - LEFT candidate 6: base pen 3.017, combined pen 3.017, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,893 - DEBUG - LEFT candidate 7: base pen 3.170, combined pen 3.170, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,894 - DEBUG - LEFT candidate 8: base pen 3.170, combined pen 3.170, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,894 - DEBUG - LEFT candidate 9: base pen 3.304, combined pen 3.304, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,895 - DEBUG - LEFT candidate 10: base pen 3.446, combined pen 3.446, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,896 - DEBUG - LEFT candidate 11: base pen 3.609, combined pen 3.609, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,897 - DEBUG - LEFT candidate 12: base pen 4.038, combined pen 4.038, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:05,897 - DEBUG - LEFT candidate 13: base pen 0.571, combined pen 6.571, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,898 - DEBUG - LEFT candidate 14: base pen 0.818, combined pen 6.818, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,899 - DEBUG - LEFT candidate 15: base pen 0.954, combined pen 6.954, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,900 - DEBUG - LEFT candidate 16: base pen 0.954, combined pen 6.954, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,900 - DEBUG - LEFT candidate 17: base pen 0.957, combined pen 6.957, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,901 - DEBUG - LEFT candidate 18: base pen 0.957, combined pen 6.957, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,902 - DEBUG - LEFT candidate 19: base pen 1.106, combined pen 7.106, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,903 - DEBUG - LEFT candidate 20: base pen 0.235, combined pen 7.235, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,904 - DEBUG - LEFT candidate 21: base pen 1.236, combined pen 7.236, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,905 - DEBUG - LEFT candidate 22: base pen 1.463, combined pen 7.463, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,905 - DEBUG - LEFT candidate 23: base pen 1.506, combined pen 7.506, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,906 - DEBUG - LEFT candidate 24: base pen 1.562, combined pen 7.562, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,907 - DEBUG - LEFT candidate 25: base pen 0.621, combined pen 7.621, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,908 - DEBUG - LEFT candidate 26: base pen 1.709, combined pen 7.709, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,909 - DEBUG - LEFT candidate 27: base pen 1.829, combined pen 7.829, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,909 - DEBUG - LEFT candidate 28: base pen 1.840, combined pen 7.840, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,910 - DEBUG - LEFT candidate 29: base pen 1.937, combined pen 7.937, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,911 - DEBUG - LEFT candidate 30: base pen 0.948, combined pen 7.948, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,912 - DEBUG - LEFT candidate 31: base pen 0.986, combined pen 7.986, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,913 - DEBUG - LEFT candidate 32: base pen 0.987, combined pen 7.987, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,913 - DEBUG - LEFT candidate 33: base pen 1.017, combined pen 8.017, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,914 - DEBUG - LEFT candidate 34: base pen 1.130, combined pen 8.130, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,915 - DEBUG - LEFT candidate 35: base pen 1.130, combined pen 8.130, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,916 - DEBUG - LEFT candidate 36: base pen 2.157, combined pen 8.157, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,916 - DEBUG - LEFT candidate 37: base pen 1.188, combined pen 8.188, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,917 - DEBUG - LEFT candidate 38: base pen 1.188, combined pen 8.188, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,918 - DEBUG - LEFT candidate 39: base pen 1.188, combined pen 8.188, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,919 - DEBUG - LEFT candidate 40: base pen 2.198, combined pen 8.198, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,920 - DEBUG - LEFT candidate 41: base pen 1.228, combined pen 8.228, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,920 - DEBUG - LEFT candidate 42: base pen 1.305, combined pen 8.305, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,921 - DEBUG - LEFT candidate 43: base pen 1.305, combined pen 8.305, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,922 - DEBUG - LEFT candidate 44: base pen 2.305, combined pen 8.305, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,923 - DEBUG - LEFT candidate 45: base pen 1.438, combined pen 8.438, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,923 - DEBUG - LEFT candidate 46: base pen 2.500, combined pen 8.500, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,924 - DEBUG - LEFT candidate 47: base pen 1.556, combined pen 8.556, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,925 - DEBUG - LEFT candidate 48: base pen 1.575, combined pen 8.575, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,926 - DEBUG - LEFT candidate 49: base pen 1.582, combined pen 8.582, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,926 - DEBUG - LEFT candidate 50: base pen 2.621, combined pen 8.621, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,927 - DEBUG - LEFT candidate 51: base pen 2.639, combined pen 8.639, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,928 - DEBUG - LEFT candidate 52: base pen 2.679, combined pen 8.679, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,929 - DEBUG - LEFT candidate 53: base pen 2.773, combined pen 8.773, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,930 - DEBUG - LEFT candidate 54: base pen 2.922, combined pen 8.922, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,931 - DEBUG - LEFT candidate 55: base pen 2.922, combined pen 8.922, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,931 - DEBUG - LEFT candidate 56: base pen 1.931, combined pen 8.931, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,932 - DEBUG - LEFT candidate 57: base pen 2.956, combined pen 8.956, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,933 - DEBUG - LEFT candidate 58: base pen 1.980, combined pen 8.980, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,934 - DEBUG - LEFT candidate 59: base pen 1.980, combined pen 8.980, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,934 - DEBUG - LEFT candidate 60: base pen 2.982, combined pen 8.982, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,935 - DEBUG - LEFT candidate 61: base pen 2.989, combined pen 8.989, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,936 - DEBUG - LEFT candidate 62: base pen 3.016, combined pen 9.016, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,937 - DEBUG - LEFT candidate 63: base pen 3.044, combined pen 9.044, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,938 - DEBUG - LEFT candidate 64: base pen 3.044, combined pen 9.044, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,938 - DEBUG - LEFT candidate 65: base pen 3.124, combined pen 9.124, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,939 - DEBUG - LEFT candidate 66: base pen 3.124, combined pen 9.124, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,940 - DEBUG - LEFT candidate 67: base pen 3.137, combined pen 9.137, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,941 - DEBUG - LEFT candidate 68: base pen 3.188, combined pen 9.188, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,942 - DEBUG - LEFT candidate 69: base pen 3.256, combined pen 9.256, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,943 - DEBUG - LEFT candidate 70: base pen 3.262, combined pen 9.262, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,944 - DEBUG - LEFT candidate 71: base pen 2.285, combined pen 9.285, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,946 - DEBUG - LEFT candidate 72: base pen 2.300, combined pen 9.300, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,947 - DEBUG - LEFT candidate 73: base pen 2.300, combined pen 9.300, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,947 - DEBUG - LEFT candidate 74: base pen 2.364, combined pen 9.364, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,948 - DEBUG - LEFT candidate 75: base pen 3.371, combined pen 9.371, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,949 - DEBUG - LEFT candidate 76: base pen 3.456, combined pen 9.456, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,950 - DEBUG - LEFT candidate 77: base pen 3.460, combined pen 9.460, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,951 - DEBUG - LEFT candidate 78: base pen 3.484, combined pen 9.484, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,951 - DEBUG - LEFT candidate 79: base pen 3.486, combined pen 9.486, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,952 - DEBUG - LEFT candidate 80: base pen 2.502, combined pen 9.502, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,953 - DEBUG - LEFT candidate 81: base pen 2.502, combined pen 9.502, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,954 - DEBUG - LEFT candidate 82: base pen 2.502, combined pen 9.502, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,955 - DEBUG - LEFT candidate 83: base pen 2.504, combined pen 9.504, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,955 - DEBUG - LEFT candidate 84: base pen 2.536, combined pen 9.536, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,956 - DEBUG - LEFT candidate 85: base pen 3.537, combined pen 9.537, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,957 - DEBUG - LEFT candidate 86: base pen 3.537, combined pen 9.537, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,958 - DEBUG - LEFT candidate 87: base pen 3.592, combined pen 9.592, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,959 - DEBUG - LEFT candidate 88: base pen 3.613, combined pen 9.613, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,959 - DEBUG - LEFT candidate 89: base pen 3.624, combined pen 9.624, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,960 - DEBUG - LEFT candidate 90: base pen 3.624, combined pen 9.624, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,961 - DEBUG - LEFT candidate 91: base pen 3.633, combined pen 9.633, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,962 - DEBUG - LEFT candidate 92: base pen 2.635, combined pen 9.635, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,963 - DEBUG - LEFT candidate 93: base pen 2.667, combined pen 9.667, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,964 - DEBUG - LEFT candidate 94: base pen 3.692, combined pen 9.692, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,964 - DEBUG - LEFT candidate 95: base pen 2.738, combined pen 9.738, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,965 - DEBUG - LEFT candidate 96: base pen 2.776, combined pen 9.776, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,966 - DEBUG - LEFT candidate 97: base pen 3.890, combined pen 9.890, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,967 - DEBUG - LEFT candidate 98: base pen 3.929, combined pen 9.929, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,968 - DEBUG - LEFT candidate 99: base pen 3.929, combined pen 9.929, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,968 - DEBUG - LEFT candidate 100: base pen 3.988, combined pen 9.988, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,969 - DEBUG - LEFT candidate 101: base pen 3.988, combined pen 9.988, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,970 - DEBUG - LEFT candidate 102: base pen 2.993, combined pen 9.993, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,971 - DEBUG - LEFT candidate 103: base pen 2.995, combined pen 9.995, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,972 - DEBUG - LEFT candidate 104: base pen 4.107, combined pen 10.107, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,973 - DEBUG - LEFT candidate 105: base pen 3.134, combined pen 10.134, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,973 - DEBUG - LEFT candidate 106: base pen 3.134, combined pen 10.134, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,974 - DEBUG - LEFT candidate 107: base pen 3.171, combined pen 10.171, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,975 - DEBUG - LEFT candidate 108: base pen 3.171, combined pen 10.171, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,976 - DEBUG - LEFT candidate 109: base pen 3.199, combined pen 10.199, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,976 - DEBUG - LEFT candidate 110: base pen 4.211, combined pen 10.211, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,977 - DEBUG - LEFT candidate 111: base pen 3.300, combined pen 10.300, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,978 - DEBUG - LEFT candidate 112: base pen 4.302, combined pen 10.302, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,979 - DEBUG - LEFT candidate 113: base pen 4.423, combined pen 10.423, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,980 - DEBUG - LEFT candidate 114: base pen 4.463, combined pen 10.463, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,980 - DEBUG - LEFT candidate 115: base pen 4.463, combined pen 10.463, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,981 - DEBUG - LEFT candidate 116: base pen 4.658, combined pen 10.658, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,982 - DEBUG - LEFT candidate 117: base pen 4.681, combined pen 10.681, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,983 - DEBUG - LEFT candidate 118: base pen 3.702, combined pen 10.702, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,984 - DEBUG - LEFT candidate 119: base pen 3.759, combined pen 10.759, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,984 - DEBUG - LEFT candidate 120: base pen 3.759, combined pen 10.759, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,985 - DEBUG - LEFT candidate 121: base pen 4.797, combined pen 10.797, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,986 - DEBUG - LEFT candidate 122: base pen 3.832, combined pen 10.832, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,987 - DEBUG - LEFT candidate 123: base pen 3.895, combined pen 10.895, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,988 - DEBUG - LEFT candidate 124: base pen 3.901, combined pen 10.901, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,988 - DEBUG - LEFT candidate 125: base pen 4.067, combined pen 11.067, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,989 - DEBUG - LEFT candidate 126: base pen 4.067, combined pen 11.067, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,990 - DEBUG - LEFT candidate 127: base pen 5.126, combined pen 11.126, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,991 - DEBUG - LEFT candidate 128: base pen 5.323, combined pen 11.323, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,992 - DEBUG - LEFT candidate 129: base pen 4.409, combined pen 11.409, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,993 - DEBUG - LEFT candidate 130: base pen 5.447, combined pen 11.447, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,994 - DEBUG - LEFT candidate 131: base pen 5.461, combined pen 11.461, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,995 - DEBUG - LEFT candidate 132: base pen 5.461, combined pen 11.461, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,995 - DEBUG - LEFT candidate 133: base pen 4.537, combined pen 11.537, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,996 - DEBUG - LEFT candidate 134: base pen 4.537, combined pen 11.537, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:05,997 - DEBUG - LEFT candidate 135: base pen 6.291, combined pen 12.291, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,998 - DEBUG - LEFT candidate 136: base pen 6.291, combined pen 12.291, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:05,999 - DEBUG - LEFT candidate 137: base pen 6.424, combined pen 12.424, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,000 - DEBUG - LEFT candidate 138: base pen 6.878, combined pen 12.878, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,001 - DEBUG - LEFT candidate 139: base pen 7.198, combined pen 13.198, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,001 - DEBUG - LEFT candidate 140: base pen 1.282, combined pen 13.282, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,002 - DEBUG - LEFT candidate 141: base pen 3.017, combined pen 15.017, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,003 - DEBUG - LEFT candidate 142: base pen 3.176, combined pen 15.176, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:06,005 - DEBUG - Picked MSA slice: Alignment with 14 rows and 21 columns
+CCAACAAGGTCCCATTACAGT EF077279.1
+CCAACAAGGTCCCATTACAGT NC_038878.1
+CCAACAAGGTCCCATTGCAGT OR726587.1
+CCAACAAGGTCCCATTGCAGT OM001354.1
+CCAACAAGGTCCCATTGCAGT OM001407.1
+CCAATAAGGTCCCATTGCAGT OK539509.1
+CCAACAAGGTCCCATTGCAGT OL133760.1
+CCAACAAGGTCCCATTGCAGT OK017918.1
+CTAACAAGGTCCCATTGCAGT MZ670576.1
+CCAACAAGGTCCCATTGCAGT MZ268706.1
+CCAACAAGGTCCCATTGCAGT MZ268720.1
+CCAACAAGGTCCCATTGCAGT MZ322915.1
+CCAACAAGGTCCCATTGCAGT MW969527.1
+* ** *********** **** Cigar
+2023-12-18 03:00:06,005 - DEBUG - RIGHT candidate 0: *picked, base pen 1.380, combined pen 5.380, 1 max mismatch, 4 total mismatches.
+2023-12-18 03:00:06,006 - DEBUG - RIGHT candidate 1: base pen 1.578, combined pen 5.578, 1 max mismatch, 4 total mismatches.
+2023-12-18 03:00:06,007 - DEBUG - RIGHT candidate 2: base pen 2.304, combined pen 6.304, 1 max mismatch, 4 total mismatches.
+2023-12-18 03:00:06,008 - DEBUG - RIGHT candidate 3: base pen 1.151, combined pen 9.151, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,008 - DEBUG - RIGHT candidate 4: base pen 1.642, combined pen 9.642, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,009 - DEBUG - RIGHT candidate 5: base pen 1.821, combined pen 9.821, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,010 - DEBUG - RIGHT candidate 6: base pen 1.906, combined pen 9.906, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,011 - DEBUG - RIGHT candidate 7: base pen 1.906, combined pen 9.906, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,012 - DEBUG - RIGHT candidate 8: base pen 2.222, combined pen 10.222, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,012 - DEBUG - RIGHT candidate 9: base pen 2.222, combined pen 10.222, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,013 - DEBUG - RIGHT candidate 10: base pen 2.620, combined pen 10.620, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,014 - DEBUG - RIGHT candidate 11: base pen 1.801, combined pen 10.801, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:06,015 - DEBUG - RIGHT candidate 12: base pen 2.814, combined pen 10.814, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,015 - DEBUG - RIGHT candidate 13: base pen 2.826, combined pen 10.826, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,016 - DEBUG - RIGHT candidate 14: base pen 3.142, combined pen 11.142, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,017 - DEBUG - RIGHT candidate 15: base pen 3.541, combined pen 11.541, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,018 - DEBUG - RIGHT candidate 16: base pen 3.617, combined pen 11.617, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,019 - DEBUG - RIGHT candidate 17: base pen 3.676, combined pen 11.676, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,019 - DEBUG - RIGHT candidate 18: base pen 3.801, combined pen 11.801, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,020 - DEBUG - RIGHT candidate 19: base pen 5.843, combined pen 12.843, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:06,021 - DEBUG - RIGHT candidate 20: base pen 6.173, combined pen 13.173, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:06,022 - DEBUG - RIGHT candidate 21: base pen 4.195, combined pen 13.195, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:06,023 - DEBUG - RIGHT candidate 22: base pen 5.392, combined pen 13.392, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:06,024 - DEBUG - RIGHT candidate 23: base pen 4.190, combined pen 15.190, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,024 - DEBUG - RIGHT candidate 24: base pen 4.413, combined pen 15.413, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,025 - DEBUG - RIGHT candidate 25: base pen 4.472, combined pen 15.472, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,026 - DEBUG - RIGHT candidate 26: base pen 4.472, combined pen 15.472, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,027 - DEBUG - RIGHT candidate 27: base pen 4.653, combined pen 15.653, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,028 - DEBUG - RIGHT candidate 28: base pen 5.472, combined pen 16.472, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,029 - DEBUG - RIGHT candidate 29: base pen 5.949, combined pen 16.949, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,030 - DEBUG - RIGHT candidate 30: base pen 6.106, combined pen 17.106, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,031 - DEBUG - RIGHT candidate 31: base pen 6.230, combined pen 17.230, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,032 - DEBUG - RIGHT candidate 32: base pen 6.292, combined pen 17.292, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,033 - DEBUG - RIGHT candidate 33: base pen 6.292, combined pen 17.292, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,034 - DEBUG - RIGHT candidate 34: base pen 6.292, combined pen 17.292, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,035 - DEBUG - RIGHT candidate 35: base pen 6.350, combined pen 17.350, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,036 - DEBUG - RIGHT candidate 36: base pen 6.518, combined pen 17.518, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,037 - DEBUG - RIGHT candidate 37: base pen 6.867, combined pen 17.867, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,037 - DEBUG - RIGHT candidate 38: base pen 7.058, combined pen 18.058, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,039 - DEBUG - RIGHT candidate 39: base pen 7.282, combined pen 18.282, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,040 - DEBUG - RIGHT candidate 40: base pen 7.287, combined pen 18.287, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,041 - DEBUG - RIGHT candidate 41: base pen 7.377, combined pen 18.377, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,042 - DEBUG - RIGHT candidate 42: base pen 7.649, combined pen 18.649, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,043 - DEBUG - RIGHT candidate 43: base pen 7.795, combined pen 18.795, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:06,053 - DEBUG - Region 2, pool 2, left_limit 44, slice_start 1041, right_limit 6944
+2023-12-18 03:00:06,054 - DEBUG - Finding primers for slice 1041 to 2300
+2023-12-18 03:00:06,149 - DEBUG - Stepping left to 1030 due to failed alignment
+2023-12-18 03:00:06,150 - DEBUG - Finding primers for slice 1030 to 2289
+2023-12-18 03:00:09,558 - DEBUG - Picked MSA slice: Alignment with 14 rows and 20 columns
+TGTTTGTTGGTGGCAGTGGT EF077279.1
+TGTTTGTTGGTGGCAGTGGT NC_038878.1
+TGTTTGTTAGTGGCAGTGGT OR726587.1
+TGTTTGTTGGTGGCAGTGGT OM001354.1
+TGTTTGTTGGTGGCAGTGGT OM001407.1
+TGTTTGTTGGTGGCAGTGGT OK539509.1
+TGTTTGTTGGTGGCGGTGGT OL133760.1
+TGTTTGTTAGTGGCAGTGGT OK017918.1
+TGTTTGTTGGTGGCAGTGGT MZ670576.1
+TGTTTGTTGGTGGCAGTGGT MZ268706.1
+TGTTTGTTAGTGGCAGTGGT MZ268720.1
+TGTTTGTTAGTGGCAGTGGT MZ322915.1
+TGTTTGTTAGTGGCAGTGGT MW969527.1
+******** ***** ***** Cigar
+2023-12-18 03:00:09,559 - DEBUG - LEFT candidate 0: *picked, base pen 1.740, combined pen 7.740, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:09,560 - DEBUG - LEFT candidate 1: base pen 1.850, combined pen 8.850, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,561 - DEBUG - LEFT candidate 2: base pen 2.298, combined pen 9.298, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,561 - DEBUG - LEFT candidate 3: base pen 2.687, combined pen 9.687, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,562 - DEBUG - LEFT candidate 4: base pen 2.783, combined pen 9.783, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,563 - DEBUG - LEFT candidate 5: base pen 2.901, combined pen 9.901, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,564 - DEBUG - LEFT candidate 6: base pen 4.178, combined pen 10.178, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:09,565 - DEBUG - LEFT candidate 7: base pen 3.511, combined pen 10.511, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,566 - DEBUG - LEFT candidate 8: base pen 3.532, combined pen 10.532, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,566 - DEBUG - LEFT candidate 9: base pen 3.632, combined pen 10.632, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,567 - DEBUG - LEFT candidate 10: base pen 2.686, combined pen 10.686, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,568 - DEBUG - LEFT candidate 11: base pen 2.687, combined pen 10.687, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,569 - DEBUG - LEFT candidate 12: base pen 2.849, combined pen 10.849, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,570 - DEBUG - LEFT candidate 13: base pen 4.178, combined pen 11.178, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:09,570 - DEBUG - LEFT candidate 14: base pen 4.204, combined pen 11.204, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,571 - DEBUG - LEFT candidate 15: base pen 3.609, combined pen 11.609, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,572 - DEBUG - LEFT candidate 16: base pen 3.609, combined pen 11.609, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,573 - DEBUG - LEFT candidate 17: base pen 3.609, combined pen 11.609, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,573 - DEBUG - LEFT candidate 18: base pen 1.647, combined pen 11.647, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:09,574 - DEBUG - LEFT candidate 19: base pen 4.675, combined pen 11.675, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,575 - DEBUG - LEFT candidate 20: base pen 4.753, combined pen 11.753, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,576 - DEBUG - LEFT candidate 21: base pen 4.765, combined pen 11.765, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,577 - DEBUG - LEFT candidate 22: base pen 3.251, combined pen 12.251, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,578 - DEBUG - LEFT candidate 23: base pen 2.504, combined pen 12.504, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:09,578 - DEBUG - LEFT candidate 24: base pen 3.574, combined pen 12.574, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,579 - DEBUG - LEFT candidate 25: base pen 5.641, combined pen 12.641, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,580 - DEBUG - LEFT candidate 26: base pen 6.212, combined pen 13.212, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:09,581 - DEBUG - LEFT candidate 27: base pen 4.886, combined pen 14.886, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:09,583 - DEBUG - Picked MSA slice: Alignment with 14 rows and 21 columns
+TGAAGCTTGTGTGTCTGGGAC EF077279.1
+TGAAGCTTGTGTGTCTGGGAC NC_038878.1
+TGAAGCTTGTGTATCTGGGAC OR726587.1
+TGAAGCTTGTGTGTCTGGGAC OM001354.1
+TGAAGCTTGTGTGTCTGGGAC OM001407.1
+TGAAGCTTGTGTGTCTGGGAC OK539509.1
+TGAAGCTTGTGTGTCTGGGAC OL133760.1
+TGAAGCTTGTGTATCTGGGAC OK017918.1
+TGAAGCTTGTGTGTCTGGGAC MZ670576.1
+TGAAGCTTGTGTGTCTGGGAC MZ268706.1
+TGAAGCTTGTGTATCTGGGAC MZ268720.1
+TGAAGCTTGTGTATCTGGGAC MZ322915.1
+TGAAGCTTGTGTATCTGGGAC MW969527.1
+************ ******** Cigar
+2023-12-18 03:00:09,583 - DEBUG - RIGHT candidate 0: *picked, base pen 1.821, combined pen 6.821, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,584 - DEBUG - RIGHT candidate 1: base pen 1.821, combined pen 6.821, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,585 - DEBUG - RIGHT candidate 2: base pen 2.032, combined pen 7.032, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,586 - DEBUG - RIGHT candidate 3: base pen 2.032, combined pen 7.032, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,587 - DEBUG - RIGHT candidate 4: base pen 2.032, combined pen 7.032, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,587 - DEBUG - RIGHT candidate 5: base pen 2.365, combined pen 7.365, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,588 - DEBUG - RIGHT candidate 6: base pen 2.365, combined pen 7.365, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,589 - DEBUG - RIGHT candidate 7: base pen 2.365, combined pen 7.365, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,590 - DEBUG - RIGHT candidate 8: base pen 2.507, combined pen 7.507, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:09,591 - DEBUG - RIGHT candidate 9: base pen 1.298, combined pen 9.298, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,591 - DEBUG - RIGHT candidate 10: base pen 1.298, combined pen 9.298, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,592 - DEBUG - RIGHT candidate 11: base pen 1.298, combined pen 9.298, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,593 - DEBUG - RIGHT candidate 12: base pen 1.608, combined pen 9.608, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,594 - DEBUG - RIGHT candidate 13: base pen 1.812, combined pen 9.812, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,595 - DEBUG - RIGHT candidate 14: base pen 2.108, combined pen 10.108, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,596 - DEBUG - RIGHT candidate 15: base pen 2.108, combined pen 10.108, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,596 - DEBUG - RIGHT candidate 16: base pen 3.816, combined pen 11.816, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,597 - DEBUG - RIGHT candidate 17: base pen 3.923, combined pen 11.923, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,598 - DEBUG - RIGHT candidate 18: base pen 3.923, combined pen 11.923, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:09,599 - DEBUG - RIGHT candidate 19: base pen 3.609, combined pen 14.609, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:09,609 - DEBUG - Region 3, pool 1, left_limit 1217, slice_start 2066, right_limit 6944
+2023-12-18 03:00:09,609 - DEBUG - Finding primers for slice 2066 to 3325
+2023-12-18 03:00:12,306 - DEBUG - Stepping left to 2055 due to no suitable primers
+2023-12-18 03:00:12,311 - DEBUG - Finding primers for slice 2055 to 3314
+2023-12-18 03:00:14,994 - DEBUG - Stepping left to 2044 due to no suitable primers
+2023-12-18 03:00:14,998 - DEBUG - Finding primers for slice 2044 to 3303
+2023-12-18 03:00:17,783 - DEBUG - Stepping left to 2033 due to no suitable primers
+2023-12-18 03:00:17,788 - DEBUG - Finding primers for slice 2033 to 3292
+2023-12-18 03:00:20,710 - DEBUG - Stepping left to 2022 due to no suitable primers
+2023-12-18 03:00:20,718 - DEBUG - Finding primers for slice 2022 to 3281
+2023-12-18 03:00:24,077 - DEBUG - Stepping left to 2011 due to no suitable primers
+2023-12-18 03:00:24,090 - DEBUG - Finding primers for slice 2011 to 3270
+2023-12-18 03:00:24,170 - DEBUG - Stepping left to 2000 due to failed alignment
+2023-12-18 03:00:24,170 - DEBUG - Finding primers for slice 2000 to 3259
+2023-12-18 03:00:27,543 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+TCACATTGTGGTATCAGACAGC EF077279.1
+TCACATTGTGGTATCAGACAGC NC_038878.1
+TCACATTGTGGTACCAGACAGC OR726587.1
+TCACATTGTGGCACCAGACAGC OM001354.1
+TCACATTGTGGCACCAGACAGC OM001407.1
+TCACATTGTGGCACCAGACAGC OK539509.1
+TCACATTGTGGCACCAGACAGC OL133760.1
+TCACATTGTGGTACCAGACAGC OK017918.1
+TCACATTGTGGCACCAGACAGC MZ670576.1
+TCACATTGTGGCACCAGACAGC MZ268706.1
+TCACATTGTGGTACCAGACAGC MZ268720.1
+TCACATTGTGGTACCAGACAGC MZ322915.1
+TCACATTGTGGTACCAGACAGC MW969527.1
+*********** * ******** Cigar
+2023-12-18 03:00:27,544 - DEBUG - LEFT candidate 0: *picked, base pen 0.538, combined pen 8.538, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,545 - DEBUG - LEFT candidate 1: base pen 0.652, combined pen 8.652, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,545 - DEBUG - LEFT candidate 2: base pen 1.183, combined pen 9.183, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,546 - DEBUG - LEFT candidate 3: base pen 1.701, combined pen 9.701, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,547 - DEBUG - LEFT candidate 4: base pen 2.697, combined pen 10.697, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,548 - DEBUG - LEFT candidate 5: base pen 3.179, combined pen 11.179, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,548 - DEBUG - LEFT candidate 6: base pen 3.666, combined pen 11.666, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,550 - DEBUG - Picked MSA slice: Alignment with 14 rows and 23 columns
+GTGATGTGTGAGGTTTATTGGGA EF077279.1
+GTGATGTGTGAGGTTTATTGGGA NC_038878.1
+GTGGTGTGTGAGGTTTATTGGGA OR726587.1
+GTGGTGTGTGAGGTTTATTGGGA OM001354.1
+GTGGTGTGTGAGGTTTATTGGGA OM001407.1
+GTGGTGTGTGAGGTTTATTGGGA OK539509.1
+GTGGTGTGTGAGGTTTATTGGGA OL133760.1
+GTGGTGTGTGAGGTTTATTGGGA OK017918.1
+GTGGTGTGTGAGGTTTATTGGGA MZ670576.1
+GTGGTGTGTGAGGTTTATTGGGA MZ268706.1
+GTGGTGTGTGAGGTTTATTGGGA MZ268720.1
+GTGGTGTGTGAGGTTTATTGGGA MZ322915.1
+GTGGTGTGTGAGGTTTATTGGGA MW969527.1
+*** ******************* Cigar
+2023-12-18 03:00:27,551 - DEBUG - RIGHT candidate 0: *picked, base pen 0.945, combined pen 2.945, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,552 - DEBUG - RIGHT candidate 1: base pen 1.448, combined pen 3.448, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,553 - DEBUG - RIGHT candidate 2: base pen 2.462, combined pen 4.462, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,553 - DEBUG - RIGHT candidate 3: base pen 2.463, combined pen 4.463, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,554 - DEBUG - RIGHT candidate 4: base pen 2.753, combined pen 4.753, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,555 - DEBUG - RIGHT candidate 5: base pen 2.939, combined pen 4.939, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,556 - DEBUG - RIGHT candidate 6: base pen 2.940, combined pen 4.940, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,557 - DEBUG - RIGHT candidate 7: base pen 2.964, combined pen 4.964, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,557 - DEBUG - RIGHT candidate 8: base pen 3.051, combined pen 5.051, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,558 - DEBUG - RIGHT candidate 9: base pen 3.273, combined pen 5.273, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,559 - DEBUG - RIGHT candidate 10: base pen 5.388, combined pen 5.388, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:27,560 - DEBUG - RIGHT candidate 11: base pen 3.426, combined pen 5.426, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,561 - DEBUG - RIGHT candidate 12: base pen 3.442, combined pen 5.442, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,562 - DEBUG - RIGHT candidate 13: base pen 4.481, combined pen 6.481, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,562 - DEBUG - RIGHT candidate 14: base pen 4.670, combined pen 6.670, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,563 - DEBUG - RIGHT candidate 15: base pen 4.854, combined pen 6.854, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,564 - DEBUG - RIGHT candidate 16: base pen 5.369, combined pen 7.369, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,565 - DEBUG - RIGHT candidate 17: base pen 6.106, combined pen 8.106, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:27,566 - DEBUG - RIGHT candidate 18: base pen 0.148, combined pen 8.148, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,567 - DEBUG - RIGHT candidate 19: base pen 1.219, combined pen 9.219, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,567 - DEBUG - RIGHT candidate 20: base pen 1.556, combined pen 9.556, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,568 - DEBUG - RIGHT candidate 21: base pen 1.827, combined pen 9.827, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,569 - DEBUG - RIGHT candidate 22: base pen 2.420, combined pen 10.420, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,570 - DEBUG - RIGHT candidate 23: base pen 2.754, combined pen 10.754, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,570 - DEBUG - RIGHT candidate 24: base pen 3.038, combined pen 11.038, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,571 - DEBUG - RIGHT candidate 25: base pen 3.478, combined pen 11.478, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,572 - DEBUG - RIGHT candidate 26: base pen 3.516, combined pen 11.516, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,573 - DEBUG - RIGHT candidate 27: base pen 3.516, combined pen 11.516, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,573 - DEBUG - RIGHT candidate 28: base pen 3.746, combined pen 11.746, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:27,574 - DEBUG - RIGHT candidate 29: base pen 3.511, combined pen 14.511, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,575 - DEBUG - RIGHT candidate 30: base pen 3.539, combined pen 14.539, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,576 - DEBUG - RIGHT candidate 31: base pen 3.611, combined pen 14.611, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,577 - DEBUG - RIGHT candidate 32: base pen 3.658, combined pen 14.658, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,578 - DEBUG - RIGHT candidate 33: base pen 3.730, combined pen 14.730, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,578 - DEBUG - RIGHT candidate 34: base pen 3.808, combined pen 14.808, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,579 - DEBUG - RIGHT candidate 35: base pen 4.935, combined pen 15.935, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,580 - DEBUG - RIGHT candidate 36: base pen 5.155, combined pen 16.155, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,581 - DEBUG - RIGHT candidate 37: base pen 5.359, combined pen 16.359, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,582 - DEBUG - RIGHT candidate 38: base pen 5.359, combined pen 16.359, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,583 - DEBUG - RIGHT candidate 39: base pen 5.361, combined pen 16.361, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,584 - DEBUG - RIGHT candidate 40: base pen 5.398, combined pen 16.398, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,585 - DEBUG - RIGHT candidate 41: base pen 5.465, combined pen 16.465, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,586 - DEBUG - RIGHT candidate 42: base pen 5.555, combined pen 16.555, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,586 - DEBUG - RIGHT candidate 43: base pen 5.794, combined pen 16.794, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,587 - DEBUG - RIGHT candidate 44: base pen 6.348, combined pen 17.348, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,588 - DEBUG - RIGHT candidate 45: base pen 6.758, combined pen 17.758, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,589 - DEBUG - RIGHT candidate 46: base pen 7.083, combined pen 18.083, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,590 - DEBUG - RIGHT candidate 47: base pen 7.083, combined pen 18.083, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,591 - DEBUG - RIGHT candidate 48: base pen 7.175, combined pen 18.175, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:27,605 - DEBUG - Region 4, pool 2, left_limit 2242, slice_start 3033, right_limit 6944
+2023-12-18 03:00:27,605 - DEBUG - Finding primers for slice 3033 to 4292
+2023-12-18 03:00:27,665 - DEBUG - Stepping left to 3022 due to failed alignment
+2023-12-18 03:00:27,665 - DEBUG - Finding primers for slice 3022 to 4281
+2023-12-18 03:00:31,035 - DEBUG - Stepping left to 3011 due to no suitable primers
+2023-12-18 03:00:31,045 - DEBUG - Finding primers for slice 3011 to 4270
+2023-12-18 03:00:34,082 - DEBUG - Stepping left to 3000 due to no suitable primers
+2023-12-18 03:00:34,092 - DEBUG - Finding primers for slice 3000 to 4259
+2023-12-18 03:00:34,172 - DEBUG - Stepping left to 2989 due to failed alignment
+2023-12-18 03:00:34,172 - DEBUG - Finding primers for slice 2989 to 4248
+2023-12-18 03:00:34,255 - DEBUG - Stepping left to 2978 due to failed alignment
+2023-12-18 03:00:34,255 - DEBUG - Finding primers for slice 2978 to 4237
+2023-12-18 03:00:38,784 - DEBUG - Stepping left to 2967 due to no suitable primers
+2023-12-18 03:00:38,797 - DEBUG - Finding primers for slice 2967 to 4226
+2023-12-18 03:00:42,281 - DEBUG - Picked MSA slice: Alignment with 14 rows and 24 columns
+AGAACCTGGGACCTAGTGATATGT EF077279.1
+AGAACCTGGGACCTAGTGATATGT NC_038878.1
+AGAACCTGGGACCTAGTGATATGT OR726587.1
+AGAACCTGGGACCCAGTGATATGT OM001354.1
+AGAACCTGGGACCCAGTGATATGT OM001407.1
+AGAACCTGGGACCCAGTGATATGT OK539509.1
+AGAACCTGGGACCCAGTGATATGT OL133760.1
+AGAACCTGGGACCTAGTGATATGT OK017918.1
+AGAACCTGGGACCCAGTGATATGT MZ670576.1
+AGAACCTGGGACCCAGTGATATGT MZ268706.1
+AGAACCTGGGACCTAGTGATATGT MZ268720.1
+AGAACCTGGGACCTAGTGATATGT MZ322915.1
+AGAACCTGGGACCTAGTGATATGT MW969527.1
+************* ********** Cigar
+2023-12-18 03:00:42,282 - DEBUG - LEFT candidate 0: *picked, base pen 2.518, combined pen 8.518, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,283 - DEBUG - LEFT candidate 1: base pen 2.099, combined pen 9.099, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:42,284 - DEBUG - LEFT candidate 2: base pen 2.099, combined pen 9.099, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:42,285 - DEBUG - LEFT candidate 3: base pen 3.124, combined pen 9.124, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,285 - DEBUG - LEFT candidate 4: base pen 3.124, combined pen 9.124, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,286 - DEBUG - LEFT candidate 5: base pen 3.247, combined pen 9.247, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,287 - DEBUG - LEFT candidate 6: base pen 3.247, combined pen 9.247, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,288 - DEBUG - LEFT candidate 7: base pen 3.512, combined pen 9.512, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,289 - DEBUG - LEFT candidate 8: base pen 3.512, combined pen 9.512, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,290 - DEBUG - LEFT candidate 9: base pen 3.576, combined pen 9.576, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,290 - DEBUG - LEFT candidate 10: base pen 3.717, combined pen 9.717, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,291 - DEBUG - LEFT candidate 11: base pen 3.911, combined pen 9.911, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,292 - DEBUG - LEFT candidate 12: base pen 3.911, combined pen 9.911, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,293 - DEBUG - LEFT candidate 13: base pen 4.002, combined pen 10.002, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,294 - DEBUG - LEFT candidate 14: base pen 4.068, combined pen 10.068, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,295 - DEBUG - LEFT candidate 15: base pen 4.186, combined pen 10.186, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,295 - DEBUG - LEFT candidate 16: base pen 3.435, combined pen 10.435, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:42,296 - DEBUG - LEFT candidate 17: base pen 4.494, combined pen 10.494, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,297 - DEBUG - LEFT candidate 18: base pen 3.818, combined pen 10.818, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:42,298 - DEBUG - LEFT candidate 19: base pen 3.832, combined pen 10.832, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:42,299 - DEBUG - LEFT candidate 20: base pen 4.984, combined pen 10.984, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,299 - DEBUG - LEFT candidate 21: base pen 4.984, combined pen 10.984, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,300 - DEBUG - LEFT candidate 22: base pen 4.984, combined pen 10.984, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,301 - DEBUG - LEFT candidate 23: base pen 5.222, combined pen 11.222, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,302 - DEBUG - LEFT candidate 24: base pen 5.301, combined pen 11.301, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,303 - DEBUG - LEFT candidate 25: base pen 5.385, combined pen 11.385, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,304 - DEBUG - LEFT candidate 26: base pen 5.422, combined pen 11.422, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,305 - DEBUG - LEFT candidate 27: base pen 5.576, combined pen 11.576, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,305 - DEBUG - LEFT candidate 28: base pen 5.586, combined pen 11.586, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,306 - DEBUG - LEFT candidate 29: base pen 5.887, combined pen 11.887, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,307 - DEBUG - LEFT candidate 30: base pen 5.887, combined pen 11.887, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,308 - DEBUG - LEFT candidate 31: base pen 6.742, combined pen 12.742, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,309 - DEBUG - LEFT candidate 32: base pen 6.742, combined pen 12.742, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,310 - DEBUG - LEFT candidate 33: base pen 6.829, combined pen 12.829, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,311 - DEBUG - LEFT candidate 34: base pen 7.138, combined pen 13.138, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:42,312 - DEBUG - Picked MSA slice: Alignment with 14 rows and 23 columns
+TTTGGGATCAGGTGGTAATGAGT EF077279.1
+TTTGGGATCAGGTGGTAATGAGT NC_038878.1
+TTTGGGATCAGGTGGTAGTGAGT OR726587.1
+TTTGGGGTCAGGTGGTAATGAGT OM001354.1
+TTTGGGGTCAGGTGGTAATGAGT OM001407.1
+TTTGGGGTCAGGTGGTAATGAGT OK539509.1
+TTTGGGGTCAGGTGGTAATGAGT OL133760.1
+TTTGGGATCAGGTGGTAGTGAGT OK017918.1
+TTTGGGGTCAGGTGGTAATGAGT MZ670576.1
+TTTGGGGTCAGGTGGTAATGAGT MZ268706.1
+TTTGGGATCAGGTGGTAGTGAGT MZ268720.1
+TTTGGGATCAGGTGGTAGTGAGT MZ322915.1
+TTTGGGATCAGGTGGTAGTGAGT MW969527.1
+****** ********** ***** Cigar
+2023-12-18 03:00:42,313 - DEBUG - RIGHT candidate 0: *picked, base pen 4.467, combined pen 15.467, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,314 - DEBUG - RIGHT candidate 1: base pen 4.470, combined pen 15.470, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,315 - DEBUG - RIGHT candidate 2: base pen 5.580, combined pen 16.580, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,316 - DEBUG - RIGHT candidate 3: base pen 5.580, combined pen 16.580, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,316 - DEBUG - RIGHT candidate 4: base pen 5.583, combined pen 16.583, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,317 - DEBUG - RIGHT candidate 5: base pen 6.645, combined pen 17.645, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:42,332 - DEBUG - Region 5, pool 1, left_limit 3211, slice_start 4002, right_limit 6944
+2023-12-18 03:00:42,332 - DEBUG - Finding primers for slice 4002 to 5261
+2023-12-18 03:00:45,193 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+TGTGCTACAAGAAGACCCACAG EF077279.1
+TGTGCTACAAGAAGACCCACAG NC_038878.1
+TGTGCTACAAGAAGACCCACAG OR726587.1
+TGTGCTACAAGAAGACCCACAG OM001354.1
+TGTGCTACAAGAAGACCCACAG OM001407.1
+TGTGCTACAAGAAGACCCACAG OK539509.1
+TGTGCTACAAGAAGACCCACAG OL133760.1
+TGTGCTACAAGAAGACCCACAG OK017918.1
+TGTGCTACAAGAAGACCCACAG MZ670576.1
+TGTGCTACAAGAAGACCCACAG MZ268706.1
+TGTGCTACAAGAAGACCCACAG MZ268720.1
+TGTGCTACAAGAAGACCCACAG MZ322915.1
+TGTGCTACAAGAAGACCCACAG MW969527.1
+********************** Cigar
+2023-12-18 03:00:45,194 - DEBUG - LEFT candidate 0: *picked, base pen 1.189, combined pen 1.189, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,195 - DEBUG - LEFT candidate 1: base pen 1.310, combined pen 1.310, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,196 - DEBUG - LEFT candidate 2: base pen 1.313, combined pen 1.313, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,196 - DEBUG - LEFT candidate 3: base pen 1.313, combined pen 1.313, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,197 - DEBUG - LEFT candidate 4: base pen 2.205, combined pen 2.205, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,198 - DEBUG - LEFT candidate 5: base pen 2.415, combined pen 2.415, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,199 - DEBUG - LEFT candidate 6: base pen 2.204, combined pen 3.204, 1 max mismatch, 1 total mismatch.
+2023-12-18 03:00:45,200 - DEBUG - LEFT candidate 7: base pen 3.285, combined pen 3.285, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,200 - DEBUG - LEFT candidate 8: base pen 3.816, combined pen 3.816, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,201 - DEBUG - LEFT candidate 9: base pen 3.818, combined pen 3.818, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,202 - DEBUG - LEFT candidate 10: base pen 4.531, combined pen 4.531, 0 max mismatches, 0 total mismatches.
+2023-12-18 03:00:45,203 - DEBUG - LEFT candidate 11: base pen 3.683, combined pen 4.683, 1 max mismatch, 1 total mismatch.
+2023-12-18 03:00:45,204 - DEBUG - LEFT candidate 12: base pen 4.410, combined pen 5.410, 1 max mismatch, 1 total mismatch.
+2023-12-18 03:00:45,204 - DEBUG - LEFT candidate 13: base pen 1.157, combined pen 7.157, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,205 - DEBUG - LEFT candidate 14: base pen 1.205, combined pen 7.205, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,206 - DEBUG - LEFT candidate 15: base pen 0.420, combined pen 7.420, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,207 - DEBUG - LEFT candidate 16: base pen 1.439, combined pen 7.439, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,207 - DEBUG - LEFT candidate 17: base pen 1.439, combined pen 7.439, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,208 - DEBUG - LEFT candidate 18: base pen 2.299, combined pen 8.299, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,209 - DEBUG - LEFT candidate 19: base pen 2.300, combined pen 8.300, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,210 - DEBUG - LEFT candidate 20: base pen 1.322, combined pen 8.322, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,211 - DEBUG - LEFT candidate 21: base pen 2.763, combined pen 8.763, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,211 - DEBUG - LEFT candidate 22: base pen 2.774, combined pen 8.774, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,212 - DEBUG - LEFT candidate 23: base pen 2.774, combined pen 8.774, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,213 - DEBUG - LEFT candidate 24: base pen 2.808, combined pen 8.808, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,214 - DEBUG - LEFT candidate 25: base pen 2.984, combined pen 8.984, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,215 - DEBUG - LEFT candidate 26: base pen 3.056, combined pen 9.056, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,215 - DEBUG - LEFT candidate 27: base pen 3.144, combined pen 9.144, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,216 - DEBUG - LEFT candidate 28: base pen 3.144, combined pen 9.144, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,217 - DEBUG - LEFT candidate 29: base pen 3.184, combined pen 9.184, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,218 - DEBUG - LEFT candidate 30: base pen 3.668, combined pen 9.668, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,218 - DEBUG - LEFT candidate 31: base pen 3.687, combined pen 9.687, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,219 - DEBUG - LEFT candidate 32: base pen 4.409, combined pen 10.409, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,220 - DEBUG - LEFT candidate 33: base pen 4.475, combined pen 10.475, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,221 - DEBUG - LEFT candidate 34: base pen 4.598, combined pen 10.598, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,222 - DEBUG - LEFT candidate 35: base pen 3.707, combined pen 10.707, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,222 - DEBUG - LEFT candidate 36: base pen 3.707, combined pen 10.707, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,223 - DEBUG - LEFT candidate 37: base pen 1.187, combined pen 12.187, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,224 - DEBUG - LEFT candidate 38: base pen 2.063, combined pen 13.063, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,225 - DEBUG - LEFT candidate 39: base pen 2.150, combined pen 13.150, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,226 - DEBUG - LEFT candidate 40: base pen 2.249, combined pen 13.249, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,226 - DEBUG - LEFT candidate 41: base pen 2.296, combined pen 13.296, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,227 - DEBUG - LEFT candidate 42: base pen 4.318, combined pen 13.318, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:45,228 - DEBUG - LEFT candidate 43: base pen 1.712, combined pen 13.712, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,229 - DEBUG - LEFT candidate 44: base pen 4.754, combined pen 13.754, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:45,230 - DEBUG - LEFT candidate 45: base pen 3.148, combined pen 14.148, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,230 - DEBUG - LEFT candidate 46: base pen 3.269, combined pen 14.269, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,231 - DEBUG - LEFT candidate 47: base pen 3.269, combined pen 14.269, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,232 - DEBUG - LEFT candidate 48: base pen 3.462, combined pen 14.462, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,233 - DEBUG - LEFT candidate 49: base pen 2.473, combined pen 14.473, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,234 - DEBUG - LEFT candidate 50: base pen 2.719, combined pen 14.719, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,235 - DEBUG - LEFT candidate 51: base pen 2.719, combined pen 14.719, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,235 - DEBUG - LEFT candidate 52: base pen 1.014, combined pen 15.014, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,236 - DEBUG - LEFT candidate 53: base pen 3.272, combined pen 15.272, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,237 - DEBUG - LEFT candidate 54: base pen 6.475, combined pen 15.475, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:45,238 - DEBUG - LEFT candidate 55: base pen 3.592, combined pen 15.592, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,239 - DEBUG - LEFT candidate 56: base pen 4.763, combined pen 15.763, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,240 - DEBUG - LEFT candidate 57: base pen 3.776, combined pen 15.776, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,240 - DEBUG - LEFT candidate 58: base pen 4.057, combined pen 16.057, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,241 - DEBUG - LEFT candidate 59: base pen 4.217, combined pen 16.217, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,242 - DEBUG - LEFT candidate 60: base pen 4.469, combined pen 16.469, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,243 - DEBUG - LEFT candidate 61: base pen 4.526, combined pen 16.526, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,244 - DEBUG - LEFT candidate 62: base pen 4.734, combined pen 16.734, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,245 - DEBUG - LEFT candidate 63: base pen 4.734, combined pen 16.734, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,246 - DEBUG - LEFT candidate 64: base pen 4.768, combined pen 16.768, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,247 - DEBUG - LEFT candidate 65: base pen 4.824, combined pen 16.824, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,247 - DEBUG - LEFT candidate 66: base pen 4.869, combined pen 16.869, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,248 - DEBUG - LEFT candidate 67: base pen 4.885, combined pen 16.885, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,249 - DEBUG - LEFT candidate 68: base pen 4.957, combined pen 16.957, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,250 - DEBUG - LEFT candidate 69: base pen 5.078, combined pen 17.078, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,251 - DEBUG - LEFT candidate 70: base pen 5.087, combined pen 17.087, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,252 - DEBUG - LEFT candidate 71: base pen 5.105, combined pen 17.105, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,253 - DEBUG - LEFT candidate 72: base pen 5.224, combined pen 17.224, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,254 - DEBUG - LEFT candidate 73: base pen 1.439, combined pen 17.439, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,254 - DEBUG - LEFT candidate 74: base pen 5.447, combined pen 17.447, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,255 - DEBUG - LEFT candidate 75: base pen 3.465, combined pen 17.465, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,256 - DEBUG - LEFT candidate 76: base pen 5.523, combined pen 17.523, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,257 - DEBUG - LEFT candidate 77: base pen 5.622, combined pen 17.622, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,258 - DEBUG - LEFT candidate 78: base pen 5.652, combined pen 17.652, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,261 - DEBUG - LEFT candidate 79: base pen 5.652, combined pen 17.652, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,263 - DEBUG - LEFT candidate 80: base pen 5.652, combined pen 17.652, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,264 - DEBUG - LEFT candidate 81: base pen 5.904, combined pen 17.904, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,266 - DEBUG - LEFT candidate 82: base pen 5.904, combined pen 17.904, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,268 - DEBUG - LEFT candidate 83: base pen 6.066, combined pen 18.066, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,269 - DEBUG - LEFT candidate 84: base pen 6.066, combined pen 18.066, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,271 - DEBUG - LEFT candidate 85: base pen 6.358, combined pen 18.358, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,272 - DEBUG - LEFT candidate 86: base pen 6.361, combined pen 18.361, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,274 - DEBUG - LEFT candidate 87: base pen 6.400, combined pen 18.400, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,276 - DEBUG - LEFT candidate 88: base pen 6.506, combined pen 18.506, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,277 - DEBUG - LEFT candidate 89: base pen 6.506, combined pen 18.506, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,279 - DEBUG - LEFT candidate 90: base pen 6.788, combined pen 18.788, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,280 - DEBUG - LEFT candidate 91: base pen 6.797, combined pen 18.797, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,282 - DEBUG - LEFT candidate 92: base pen 7.199, combined pen 19.199, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,283 - DEBUG - LEFT candidate 93: base pen 7.199, combined pen 19.199, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,285 - DEBUG - LEFT candidate 94: base pen 7.199, combined pen 19.199, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,287 - DEBUG - LEFT candidate 95: base pen 7.206, combined pen 19.206, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,288 - DEBUG - LEFT candidate 96: base pen 7.206, combined pen 19.206, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,290 - DEBUG - LEFT candidate 97: base pen 7.333, combined pen 19.333, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:45,291 - DEBUG - LEFT candidate 98: base pen 4.409, combined pen 20.409, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,294 - DEBUG - Picked MSA slice: Alignment with 14 rows and 30 columns
+TCTTATGTCTCTGAACTTTTCATTTCGATC EF077279.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC NC_038878.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC OR726587.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC OM001354.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC OM001407.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC OK539509.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC OL133760.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC OK017918.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC MZ670576.1
+TCTTATGTCTCTGAATTTTTCATTTCGATC MZ268706.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC MZ268720.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC MZ322915.1
+TCTTATGTCTCTGAACTTTTCATTTCGATC MW969527.1
+*************** ************** Cigar
+2023-12-18 03:00:45,296 - DEBUG - RIGHT candidate 0: *picked, base pen 7.368, combined pen 13.368, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,297 - DEBUG - RIGHT candidate 1: base pen 7.370, combined pen 13.370, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,299 - DEBUG - RIGHT candidate 2: base pen 7.655, combined pen 13.655, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:45,300 - DEBUG - RIGHT candidate 3: base pen 7.397, combined pen 14.397, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:45,302 - DEBUG - RIGHT candidate 4: base pen 4.456, combined pen 15.456, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,303 - DEBUG - RIGHT candidate 5: base pen 5.086, combined pen 16.086, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,304 - DEBUG - RIGHT candidate 6: base pen 5.184, combined pen 16.184, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,306 - DEBUG - RIGHT candidate 7: base pen 5.184, combined pen 16.184, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,307 - DEBUG - RIGHT candidate 8: base pen 5.211, combined pen 16.211, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,308 - DEBUG - RIGHT candidate 9: base pen 5.551, combined pen 16.551, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,310 - DEBUG - RIGHT candidate 10: base pen 5.625, combined pen 16.625, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,311 - DEBUG - RIGHT candidate 11: base pen 6.067, combined pen 17.067, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,312 - DEBUG - RIGHT candidate 12: base pen 6.096, combined pen 17.096, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,313 - DEBUG - RIGHT candidate 13: base pen 6.614, combined pen 17.614, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,315 - DEBUG - RIGHT candidate 14: base pen 6.675, combined pen 17.675, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,316 - DEBUG - RIGHT candidate 15: base pen 6.947, combined pen 17.947, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,317 - DEBUG - RIGHT candidate 16: base pen 6.949, combined pen 17.949, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,319 - DEBUG - RIGHT candidate 17: base pen 6.949, combined pen 17.949, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,320 - DEBUG - RIGHT candidate 18: base pen 7.230, combined pen 18.230, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,321 - DEBUG - RIGHT candidate 19: base pen 7.639, combined pen 18.639, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,322 - DEBUG - RIGHT candidate 20: base pen 7.378, combined pen 23.378, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,324 - DEBUG - RIGHT candidate 21: base pen 7.468, combined pen 23.468, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:45,341 - DEBUG - Region 6, pool 2, left_limit 4180, slice_start 5051, right_limit 6944
+2023-12-18 03:00:45,341 - DEBUG - Finding primers for slice 5051 to 6310
+2023-12-18 03:00:50,532 - DEBUG - Stepping left to 5040 due to no suitable primers
+2023-12-18 03:00:50,544 - DEBUG - Finding primers for slice 5040 to 6299
+2023-12-18 03:00:50,588 - DEBUG - Stepping left to 5029 due to failed alignment
+2023-12-18 03:00:50,588 - DEBUG - Finding primers for slice 5029 to 6288
+2023-12-18 03:00:50,668 - DEBUG - Stepping left to 5018 due to failed alignment
+2023-12-18 03:00:50,668 - DEBUG - Finding primers for slice 5018 to 6277
+2023-12-18 03:00:53,482 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+GTGCAGTAATACCCACACATGC EF077279.1
+GTGCAGTAATACCCACACATGC NC_038878.1
+GTGCAGTGATACCCACACATGC OR726587.1
+GTGCAGTAATACCCACACATGC OM001354.1
+GTGCAGTAATACCCACACATGC OM001407.1
+GTGCAGTAATACCCACACATGC OK539509.1
+GTGCAGTAATACCCACACACGC OL133760.1
+GTGCAGTGATACCCACACATGC OK017918.1
+GTGCAGTAATACCCACACATGC MZ670576.1
+GTGCAGTAATACCCACACATGC MZ268706.1
+GTGCAGTGATACCCACACATGC MZ268720.1
+GTGCAGTGATACCCACACATGC MZ322915.1
+GTGCAGTGATACCCACACATGC MW969527.1
+******* *********** ** Cigar
+2023-12-18 03:00:53,483 - DEBUG - LEFT candidate 0: *picked, base pen 1.839, combined pen 7.839, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:53,483 - DEBUG - LEFT candidate 1: base pen 2.293, combined pen 8.293, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:53,484 - DEBUG - LEFT candidate 2: base pen 3.620, combined pen 8.620, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:53,485 - DEBUG - LEFT candidate 3: base pen 1.844, combined pen 8.844, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,486 - DEBUG - LEFT candidate 4: base pen 2.389, combined pen 9.389, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,487 - DEBUG - LEFT candidate 5: base pen 2.511, combined pen 9.511, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,488 - DEBUG - LEFT candidate 6: base pen 1.799, combined pen 9.799, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,488 - DEBUG - LEFT candidate 7: base pen 2.846, combined pen 9.846, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,489 - DEBUG - LEFT candidate 8: base pen 2.913, combined pen 9.913, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,490 - DEBUG - LEFT candidate 9: base pen 2.917, combined pen 9.917, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,491 - DEBUG - LEFT candidate 10: base pen 1.989, combined pen 9.989, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,492 - DEBUG - LEFT candidate 11: base pen 3.035, combined pen 10.035, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,493 - DEBUG - LEFT candidate 12: base pen 2.068, combined pen 10.068, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,494 - DEBUG - LEFT candidate 13: base pen 3.144, combined pen 10.144, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,494 - DEBUG - LEFT candidate 14: base pen 2.465, combined pen 10.465, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,495 - DEBUG - LEFT candidate 15: base pen 3.472, combined pen 10.472, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,496 - DEBUG - LEFT candidate 16: base pen 3.694, combined pen 10.694, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,497 - DEBUG - LEFT candidate 17: base pen 3.931, combined pen 10.931, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,498 - DEBUG - LEFT candidate 18: base pen 3.066, combined pen 11.066, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,499 - DEBUG - LEFT candidate 19: base pen 4.080, combined pen 11.080, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,500 - DEBUG - LEFT candidate 20: base pen 4.231, combined pen 11.231, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,501 - DEBUG - LEFT candidate 21: base pen 4.239, combined pen 11.239, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,502 - DEBUG - LEFT candidate 22: base pen 4.304, combined pen 11.304, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,502 - DEBUG - LEFT candidate 23: base pen 4.392, combined pen 11.392, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,503 - DEBUG - LEFT candidate 24: base pen 4.410, combined pen 11.410, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,504 - DEBUG - LEFT candidate 25: base pen 4.411, combined pen 11.411, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,505 - DEBUG - LEFT candidate 26: base pen 4.690, combined pen 11.690, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,506 - DEBUG - LEFT candidate 27: base pen 4.770, combined pen 11.770, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,507 - DEBUG - LEFT candidate 28: base pen 4.841, combined pen 11.841, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,508 - DEBUG - LEFT candidate 29: base pen 5.238, combined pen 12.238, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,509 - DEBUG - LEFT candidate 30: base pen 3.471, combined pen 12.471, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,509 - DEBUG - LEFT candidate 31: base pen 5.552, combined pen 12.552, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,510 - DEBUG - LEFT candidate 32: base pen 1.606, combined pen 12.606, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,511 - DEBUG - LEFT candidate 33: base pen 5.860, combined pen 12.860, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,512 - DEBUG - LEFT candidate 34: base pen 5.861, combined pen 12.861, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,513 - DEBUG - LEFT candidate 35: base pen 6.044, combined pen 13.044, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,514 - DEBUG - LEFT candidate 36: base pen 2.107, combined pen 13.107, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,515 - DEBUG - LEFT candidate 37: base pen 6.124, combined pen 13.124, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,515 - DEBUG - LEFT candidate 38: base pen 4.186, combined pen 13.186, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,516 - DEBUG - LEFT candidate 39: base pen 6.423, combined pen 13.423, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,517 - DEBUG - LEFT candidate 40: base pen 6.500, combined pen 13.500, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,518 - DEBUG - LEFT candidate 41: base pen 2.636, combined pen 13.636, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,519 - DEBUG - LEFT candidate 42: base pen 4.116, combined pen 16.116, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,520 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+AGGCTCCCGTCATAGTTTGTGT EF077279.1
+AGGCTCCCGTCATAGTTTGTGT NC_038878.1
+AGGCTCCCATCATAGTTTGTGT OR726587.1
+AGGCTCCCATCATAGTTTGTGT OM001354.1
+AGGCTCCCATCATAGTTTGTGT OM001407.1
+AGGCTCCCATCATAGTTTGTGT OK539509.1
+AGGCTCCCATCATAGTTTGTGT OL133760.1
+AGGCTCCCATCATAGTTTGTGT OK017918.1
+AGGCTCCCATCATAGTTTGTGT MZ670576.1
+AGGCTCCCATCATAGTTTGTGT MZ268706.1
+AGGCTCCCATCATAGTTTGTGT MZ268720.1
+AGGCTCCCATCATAGTTTGTGT MZ322915.1
+AGGCTCCCATCATAGTTTGTGT MW969527.1
+******** ************* Cigar
+2023-12-18 03:00:53,521 - DEBUG - RIGHT candidate 0: *picked, base pen 3.694, combined pen 5.694, 1 max mismatch, 2 total mismatches.
+2023-12-18 03:00:53,522 - DEBUG - RIGHT candidate 1: base pen 1.335, combined pen 9.335, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,523 - DEBUG - RIGHT candidate 2: base pen 2.419, combined pen 9.419, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,524 - DEBUG - RIGHT candidate 3: base pen 1.610, combined pen 9.610, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,524 - DEBUG - RIGHT candidate 4: base pen 2.719, combined pen 9.719, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,525 - DEBUG - RIGHT candidate 5: base pen 3.059, combined pen 10.059, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,526 - DEBUG - RIGHT candidate 6: base pen 2.419, combined pen 10.419, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,527 - DEBUG - RIGHT candidate 7: base pen 2.419, combined pen 10.419, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,528 - DEBUG - RIGHT candidate 8: base pen 2.420, combined pen 10.420, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,529 - DEBUG - RIGHT candidate 9: base pen 2.501, combined pen 10.501, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,529 - DEBUG - RIGHT candidate 10: base pen 2.693, combined pen 10.693, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,530 - DEBUG - RIGHT candidate 11: base pen 3.516, combined pen 11.516, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,531 - DEBUG - RIGHT candidate 12: base pen 4.567, combined pen 11.567, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,532 - DEBUG - RIGHT candidate 13: base pen 3.604, combined pen 11.604, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,533 - DEBUG - RIGHT candidate 14: base pen 3.610, combined pen 11.610, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,533 - DEBUG - RIGHT candidate 15: base pen 4.642, combined pen 11.642, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,534 - DEBUG - RIGHT candidate 16: base pen 4.824, combined pen 11.824, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,535 - DEBUG - RIGHT candidate 17: base pen 1.451, combined pen 12.451, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,536 - DEBUG - RIGHT candidate 18: base pen 1.726, combined pen 12.726, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,537 - DEBUG - RIGHT candidate 19: base pen 2.094, combined pen 13.094, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,538 - DEBUG - RIGHT candidate 20: base pen 5.103, combined pen 13.103, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,538 - DEBUG - RIGHT candidate 21: base pen 2.219, combined pen 13.219, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,539 - DEBUG - RIGHT candidate 22: base pen 6.316, combined pen 13.316, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,540 - DEBUG - RIGHT candidate 23: base pen 5.521, combined pen 13.521, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:53,541 - DEBUG - RIGHT candidate 24: base pen 2.639, combined pen 13.639, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:53,542 - DEBUG - RIGHT candidate 25: base pen 7.188, combined pen 14.188, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,543 - DEBUG - RIGHT candidate 26: base pen 2.903, combined pen 14.903, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:53,551 - DEBUG - Region 7, pool 1, left_limit 5236, slice_start 5684, right_limit 6944
+2023-12-18 03:00:53,551 - DEBUG - Finding primers for slice 5684 to 6943
+2023-12-18 03:00:53,632 - DEBUG - Stepping left to 5673 due to failed alignment
+2023-12-18 03:00:53,632 - DEBUG - Finding primers for slice 5673 to 6932
+2023-12-18 03:00:53,712 - DEBUG - Stepping left to 5662 due to failed alignment
+2023-12-18 03:00:53,713 - DEBUG - Finding primers for slice 5662 to 6921
+2023-12-18 03:00:53,793 - DEBUG - Stepping left to 5651 due to failed alignment
+2023-12-18 03:00:53,793 - DEBUG - Finding primers for slice 5651 to 6910
+2023-12-18 03:00:57,486 - DEBUG - Picked MSA slice: Alignment with 14 rows and 25 columns
+CCCAGAAAGATCCTAGACTAGAAAC EF077279.1
+CCCAGAAAGATCCTAGACTAGAAAC NC_038878.1
+CCCAGAAAGATCCCAGACTAGAAAC OR726587.1
+CCCAGAAAGATCCTAGACTAGAAAC OM001354.1
+CCCAGAAAGATCCTAGACTAGAAAC OM001407.1
+CCCAGAAAGATCCTAGACTAGAAAC OK539509.1
+CCCAGAAAGATCCTAGACTAGAAAC OL133760.1
+CCCAGAAAGATCCCAGACTAGAAAC OK017918.1
+CCCAGAAAGATCCTAGACTAGAAAC MZ670576.1
+CCCAGAAAGATCCTAGACTAGAAAC MZ268706.1
+CCCAGAAAGATCCCAGACTAGAAAC MZ268720.1
+CCCAGAAAGATCCCAGACTAGAAAC MZ322915.1
+CCCAGAAAGATCCCAGACTAGAAAC MW969527.1
+************* *********** Cigar
+2023-12-18 03:00:57,487 - DEBUG - LEFT candidate 0: *picked, base pen 1.923, combined pen 9.923, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,488 - DEBUG - LEFT candidate 1: base pen 2.146, combined pen 10.146, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,489 - DEBUG - LEFT candidate 2: base pen 5.414, combined pen 10.414, 1 max mismatch, 5 total mismatches.
+2023-12-18 03:00:57,490 - DEBUG - LEFT candidate 3: base pen 2.436, combined pen 10.436, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,491 - DEBUG - LEFT candidate 4: base pen 3.479, combined pen 11.479, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,491 - DEBUG - LEFT candidate 5: base pen 4.125, combined pen 12.125, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,492 - DEBUG - LEFT candidate 6: base pen 5.644, combined pen 13.644, 1 max mismatch, 8 total mismatches.
+2023-12-18 03:00:57,493 - DEBUG - LEFT candidate 7: base pen 3.792, combined pen 13.792, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,494 - DEBUG - LEFT candidate 8: base pen 4.043, combined pen 14.043, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,495 - DEBUG - LEFT candidate 9: base pen 4.304, combined pen 14.304, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,496 - DEBUG - LEFT candidate 10: base pen 4.864, combined pen 14.864, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,497 - DEBUG - LEFT candidate 11: base pen 5.867, combined pen 15.867, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,498 - DEBUG - LEFT candidate 12: base pen 6.899, combined pen 16.899, 1 max mismatch, 10 total mismatches.
+2023-12-18 03:00:57,499 - DEBUG - LEFT candidate 13: base pen 5.337, combined pen 17.337, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:57,500 - DEBUG - LEFT candidate 14: base pen 5.370, combined pen 17.370, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:57,501 - DEBUG - LEFT candidate 15: base pen 7.101, combined pen 19.101, 1 max mismatch, 12 total mismatches.
+2023-12-18 03:00:57,503 - DEBUG - Picked MSA slice: Alignment with 14 rows and 22 columns
+AGATACAACCTACGGCCCACTT EF077279.1
+AGATACAACCTACGGCCCACTT NC_038878.1
+AGATACAACCTACGGCCCACTT OR726587.1
+AGATACAACCTACGACCCACTT OM001354.1
+AGATACAACCTACGACCCACTT OM001407.1
+AGATACAACCTACGACCCACTT OK539509.1
+AGATACAACCTACGACCCACTT OL133760.1
+AGATACAACCTACGGCCCACTT OK017918.1
+AGATACAACCTACGACCCACTT MZ670576.1
+AGATACAACCTACGACCCACTT MZ268706.1
+AGATACAACCTACGGCCCACTT MZ268720.1
+AGATACAACCTACGGCCCACTT MZ322915.1
+AGATACAACCTACGGCCCACTT MW969527.1
+************** ******* Cigar
+2023-12-18 03:00:57,503 - DEBUG - RIGHT candidate 0: *picked, base pen 0.685, combined pen 6.685, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,504 - DEBUG - RIGHT candidate 1: base pen 1.068, combined pen 7.068, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,505 - DEBUG - RIGHT candidate 2: base pen 1.523, combined pen 7.523, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,506 - DEBUG - RIGHT candidate 3: base pen 3.188, combined pen 9.188, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,507 - DEBUG - RIGHT candidate 4: base pen 3.188, combined pen 9.188, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,507 - DEBUG - RIGHT candidate 5: base pen 0.210, combined pen 9.210, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,508 - DEBUG - RIGHT candidate 6: base pen 3.454, combined pen 9.454, 1 max mismatch, 6 total mismatches.
+2023-12-18 03:00:57,509 - DEBUG - RIGHT candidate 7: base pen 3.320, combined pen 10.320, 1 max mismatch, 7 total mismatches.
+2023-12-18 03:00:57,510 - DEBUG - RIGHT candidate 8: base pen 1.331, combined pen 10.331, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,511 - DEBUG - RIGHT candidate 9: base pen 1.453, combined pen 10.453, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,512 - DEBUG - RIGHT candidate 10: base pen 1.839, combined pen 10.839, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,513 - DEBUG - RIGHT candidate 11: base pen 2.247, combined pen 11.247, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,514 - DEBUG - RIGHT candidate 12: base pen 2.247, combined pen 11.247, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,514 - DEBUG - RIGHT candidate 13: base pen 2.727, combined pen 11.727, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,515 - DEBUG - RIGHT candidate 14: base pen 2.774, combined pen 11.774, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,516 - DEBUG - RIGHT candidate 15: base pen 3.976, combined pen 12.976, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,517 - DEBUG - RIGHT candidate 16: base pen 4.018, combined pen 13.018, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,518 - DEBUG - RIGHT candidate 17: base pen 4.083, combined pen 13.083, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,519 - DEBUG - RIGHT candidate 18: base pen 4.187, combined pen 13.187, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,520 - DEBUG - RIGHT candidate 19: base pen 4.277, combined pen 13.277, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,521 - DEBUG - RIGHT candidate 20: base pen 4.344, combined pen 13.344, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,521 - DEBUG - RIGHT candidate 21: base pen 4.490, combined pen 13.490, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,522 - DEBUG - RIGHT candidate 22: base pen 4.667, combined pen 13.667, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,523 - DEBUG - RIGHT candidate 23: base pen 5.189, combined pen 14.189, 1 max mismatch, 9 total mismatches.
+2023-12-18 03:00:57,524 - DEBUG - RIGHT candidate 24: base pen 5.071, combined pen 16.071, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:57,525 - DEBUG - RIGHT candidate 25: base pen 6.355, combined pen 17.355, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:57,526 - DEBUG - RIGHT candidate 26: base pen 3.411, combined pen 19.411, 1 max mismatch, 11 total mismatches.
+2023-12-18 03:00:57,543 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.primer.bed
+2023-12-18 03:00:57,544 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.insert.bed
+2023-12-18 03:00:57,545 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.primer.tsv
+2023-12-18 03:00:57,545 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.reference.fasta
+2023-12-18 03:00:57,569 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.plot.pdf
+2023-12-18 03:00:57,569 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.plot.svg
+2023-12-18 03:00:57,656 - INFO - Writing /outputs/4de4867cfefc4e7980d2c016d3fa24ff/HRV-C1-1200.report.json
