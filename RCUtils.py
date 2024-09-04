@@ -53,8 +53,8 @@ def getAllSampleDirs(fastQBaseDirs):
     for (samplePrefix, fastQBaseDir) in fastQBaseDirs.items():
         if samplePrefix:
             samplePrefix += "-"
-            for fastQDir in getAllFastQDirs(fastQBaseDir):
-                yield (samplePrefix + os.path.basename(fastQDir), fastQDir)
+        for fastQDir in getAllFastQDirs(fastQBaseDir):
+            yield (samplePrefix + os.path.basename(fastQDir), fastQDir)
 
 # Return all raw reads in a sub-directory on their own
 def getReads(fastQDir):
