@@ -25,9 +25,10 @@ OVERLAP_THRESHOLD = 0.80
 # Use a fixed random seed for reproducibility
 rnd = random.Random(4200)
 
-# Get reads from a gzipped fastQ file
+# Get reads from a fastQ file, whether gzipped or plain text
 def readFastQ(path):
-    with gzip.open(path, "rt") as handle:
+    of = gzip.open if path.endswith(".gz") else open
+    with of(path, "rt") as handle:
         for record in SeqIO.parse(handle, "fastq"):
             yield record
 
@@ -90,7 +91,7 @@ def expandAmbiguity(dna):
             seqs = newSeqs
     return seqs
 
-def readPrimers(path, display=False):
+def readPrimers(path, display=False, addRc=True, addRandom=True):
     primers = []
     if display:
         print("Reading primers: " + path)
@@ -111,14 +112,16 @@ def readPrimers(path, display=False):
     if display:
         print("Read %d primers" % len(primers))
 
-    # Add a random primer as a negative control
-    minLen = min(len(p.seq) for p in primers)
-    seq = Seq("".join([rnd.choice("ACGT") for i in range(minLen)]))
-    primers.append(SeqRecord(seq, id="random", name="random", description="Random control"))
+    if addRandom:
+        # Add a random primer as a negative control
+        minLen = min(len(p.seq) for p in primers)
+        seq = Seq("".join([rnd.choice("ACGT") for i in range(minLen)]))
+        primers.append(SeqRecord(seq, id="random", name="random", description="Random control"))
 
     # Precompute reverse complements for a ~5% speedup over using 'strand'
-    for primer in primers:
-        primer.rcSeq = primer.seq.reverse_complement()
+    if addRc:
+        for primer in primers:
+            primer.rcSeq = primer.seq.reverse_complement()
 
     # Store primer indicies for efficient serialization
     for i, primer in enumerate(primers):
