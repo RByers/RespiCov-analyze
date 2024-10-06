@@ -229,42 +229,67 @@ def serializeHit(hit):
 def deserializeHit(hitBuf, primers):
     return Hit(primer=primers[hitBuf[0]], start=hitBuf[1], end=hitBuf[2], rev=hitBuf[3], mr=hitBuf[4])
 
-def getFastQAndHitsFiles(fastQDir):
+def getFastQPaths(fastQDir):
     for file in sorted(filter(lambda f: f.endswith(".fastq.gz"), os.listdir(fastQDir))):
-        fastQPath = os.path.join(fastQDir, file)
-        yield (fastQPath, fastQPath.removesuffix(".fastq.gz")+"-hits.json")
+        yield os.path.join(fastQDir, file)
+
+def getHitsForFastQ(fastQPath):
+    if fastQPath.endswith(".fastq.gz"):
+        base = fastQPath.removesuffix(".fastq.gz")
+    elif fastQPath.endswith(".fastq"):
+        base = fastQPath.removesuffix(".fastq")
+    return base+"-hits.json"
+
+def getFastQAndHitsFiles(fastQDir):
+    for fastQPath in getFastQPaths(fastQDir):
+        hitsPath = getHitsForFastQ(fastQPath)
+        yield (fastQPath, hitsPath)
 
 # Find primer matches and save them to files if files don't already exist
 def generateHitsFile(primers, fastQDir, overwrite=False):
-    for (fastQPath, hitsPath) in getFastQAndHitsFiles(fastQDir):
-        if overwrite or not os.path.exists(hitsPath):
-            print("Processing ", os.path.basename(fastQPath), end="")
-            reads = 0
-            start = time.process_time()
-            serializedHitsPerRead = []
-            for read in readFastQ(fastQPath):
-                reads += 1
-                if reads % 100 == 0:
-                    print(".",end="")
-                hits = computePrimerHits(read, primers)
-                serializedHitsPerRead.append([serializeHit(hit) for hit in hits])
+    for fastQPath in getFastQPaths(fastQDir):
+        generateSingleHitsFile(primers, fastQPath, overwrite)
 
-            elapsed = time.process_time() - start
-            print("  %.2fs" % elapsed)
+def generateSingleHitsFile(primers, fastQPath, overwrite=False, limit=None):
+    hitsPath = getHitsForFastQ(fastQPath)
+    if overwrite or not os.path.exists(hitsPath):
+        print("Processing ", os.path.basename(fastQPath), end="")
+        reads = 0
+        start = time.process_time()
+        serializedHitsPerRead = []
+        for read in readFastQ(fastQPath):
+            reads += 1
+            if reads % 100 == 0:
+                print(".",end="")
+            hits = computePrimerHits(read, primers)
+            serializedHitsPerRead.append([serializeHit(hit) for hit in hits])
+            if limit and reads >= limit:
+                break
+            
+        elapsed = time.process_time() - start
+        print("  %.2fs" % elapsed)
 
-            with open(hitsPath, "w") as f:
-                json.dump(serializedHitsPerRead, f)
-        else:
-            print("Found ", os.path.basename(hitsPath))
+        with open(hitsPath, "w") as f:
+            json.dump(serializedHitsPerRead, f)
+    else:
+        print("Found ", os.path.basename(hitsPath))
 
 # Stream all reads for a given subdirectory, along with the pre-computed primer matches
 def getPrimerMatches(primers, fastQDir):
-    for (fastQPath,hitsPath) in getFastQAndHitsFiles(fastQDir):
+    if os.path.isdir(fastQDir):
+        files = getFastQFiles(fastQDir)
+    else:
+        files = [fastQDir]
+
+    for fastQPath in files:
+        hitsPath = getHitsForFastQ(fastQPath)
         with open(hitsPath, "r") as hitsFile:
             serializedHitsPerRead = json.load(hitsFile)
             
         for (readIdx,read) in enumerate(readFastQ(fastQPath)):
             hits = []
+            if readIdx >= len(serializedHitsPerRead):
+                break
             for hitBuf in serializedHitsPerRead[readIdx]:
                 hit = deserializeHit(hitBuf, primers)
                 assert hit.start < len(read.seq)
@@ -291,11 +316,14 @@ def generateAllHitsFiles(primers, fastQBaseDir):
 
 # Stream all plausible primer pairs
 # This may include multiple overlapping pairs for a given read
-def getPrimerPairs(primers, fastQBaseDir, subdir=None):
-    if subdir:
-        gen = ((subdir, read, hits) for (read, hits) in getPrimerMatches(primers, os.path.join(fastQBaseDir, subdir)))
+def getPrimerPairs(primers, fastQPath, subdir=None):
+    # If fastQPath is a list of paths then use that directly
+    if isinstance(fastQPath, list):
+        gen = ((os.path.basename(path), read, hits) for path in fastQPath for (read, hits) in getPrimerMatches(primers, path)) 
+    elif subdir:
+        gen = ((subdir, read, hits) for (read, hits) in getPrimerMatches(primers, os.path.join(fastQPath, subdir)))
     else:
-        gen = getAllPrimerMatches(primers, fastQBaseDir)
+        gen = getAllPrimerMatches(primers, fastQPath)
     for (subdir, read, hits) in gen:
         for hit1 in hits:
             if not hit1.rev:
