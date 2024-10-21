@@ -26,11 +26,20 @@ OVERLAP_THRESHOLD = 0.80
 rnd = random.Random(4200)
 
 # Get reads from a fastQ file, whether gzipped or plain text
-def readFastQ(path):
+def readFastQ(path, limit=None):
     of = gzip.open if path.endswith(".gz") else open
     with of(path, "rt") as handle:
+        count = 0    
         for record in SeqIO.parse(handle, "fastq"):
+            count += 1
+            if limit and count > limit:
+                break
             yield record
+
+def readFastQFiles(fastQPaths, limitPerFile=None):
+    for fastQPath in fastQPaths:
+        for read in readFastQ(fastQPath, limitPerFile):
+            yield (fastQPath, read)
 
 def readFastQDirs(fastQDirs):
     for fastQDir in fastQDirs:
@@ -250,19 +259,23 @@ def generateHitsFile(primers, fastQDir, overwrite=False):
     for fastQPath in getFastQPaths(fastQDir):
         generateSingleHitsFile(primers, fastQPath, overwrite)
 
-def generateSingleHitsFile(primers, fastQPath, overwrite=False, limit=None):
+def generateSingleHitsFile(primers, fastQPath, overwrite=False, limit=None, minQual=None, maxLength=None):
     hitsPath = getHitsForFastQ(fastQPath)
     if overwrite or not os.path.exists(hitsPath):
         print("Processing ", os.path.basename(fastQPath), end="")
         reads = 0
         start = time.process_time()
-        serializedHitsPerRead = []
+        serializedHitsPerRead = {}
         for read in readFastQ(fastQPath):
             reads += 1
             if reads % 100 == 0:
                 print(".",end="")
+            if maxLength and len(read.seq) > maxLength:
+                continue
+            if minQual and np.mean(read.letter_annotations["phred_quality"]) < minQual:
+                continue
             hits = computePrimerHits(read, primers)
-            serializedHitsPerRead.append([serializeHit(hit) for hit in hits])
+            serializedHitsPerRead[read.id]=[serializeHit(hit) for hit in hits]
             if limit and reads >= limit:
                 break
             
@@ -285,17 +298,15 @@ def getPrimerMatches(primers, fastQDir):
         hitsPath = getHitsForFastQ(fastQPath)
         with open(hitsPath, "r") as hitsFile:
             serializedHitsPerRead = json.load(hitsFile)
-            
-        for (readIdx,read) in enumerate(readFastQ(fastQPath)):
-            hits = []
-            if readIdx >= len(serializedHitsPerRead):
-                break
-            for hitBuf in serializedHitsPerRead[readIdx]:
-                hit = deserializeHit(hitBuf, primers)
-                assert hit.start < len(read.seq)
-                assert hit.end <= len(read.seq)
-                hits.append(hit)
-            yield (read, hits)
+            for read in readFastQ(fastQPath):
+                if read.id in serializedHitsPerRead:
+                    hits = []
+                    for hitBuf in serializedHitsPerRead[read.id]:
+                        hit = deserializeHit(hitBuf, primers)
+                        assert hit.start < len(read.seq)
+                        assert hit.end <= len(read.seq)
+                        hits.append(hit)
+                    yield (read, hits)
 
 # Given a list of primers and a dictionary of sample prefixes to directories,
 # stream tuples of (sample, read, hit) values for all reads in all samples.
