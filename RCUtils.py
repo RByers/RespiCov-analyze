@@ -100,6 +100,15 @@ def expandAmbiguity(dna):
             seqs = newSeqs
     return seqs
 
+def calculateDegeneracy(dna):
+    deg = 1
+    for c in dna:
+        # Note that Isosine ('I') is treated as a single base for degeneracy even though it
+        # matches anything.
+        if c in IUPACData.ambiguous_dna_values:
+            deg *= len(IUPACData.ambiguous_dna_values[c])
+    return deg
+
 def readPrimers(path, display=False, addRc=True, addRandom=True, expandAmbiguous=True):
     primers = []
     if display:
@@ -117,6 +126,10 @@ def readPrimers(path, display=False, addRc=True, addRandom=True, expandAmbiguous
             print("  " + primer.description, end="")
             if len(seqs) > 1:
                 print(" (%d variations)" % len(seqs), end="")
+            else:
+                deg = calculateDegeneracy(primer.seq)
+                if deg > 1:
+                    print(" (degeneracy %d)" % deg, end="")
             print()
     if display:
         print("Read %d primers" % len(primers))
@@ -193,7 +206,9 @@ def computePrimerHits(read, primers, allowOverlaps=False, matchThreshold=MATCH_T
                 if seqToMatch==read.seq:
                     seqToMatch=MutableSeq(read.seq)
                 seqToMatch[hit.start:hit.end] = "X" * (hit.end-hit.start)
-    # Remove redundant hits that are lower scoring
+    # Remove redundant hits that are lower scoring. Many of our primers have multiple variants
+    # for maximum sensitivity (eg. ENTrc-f1 and ENTrc-f2) so we don't want to get distracted
+    # by multiple overlapping hits for the same primer set.
     hits.sort(key=lambda h: h.mr, reverse=True)
     trimmedHits = []
     for i in range(len(hits)):
