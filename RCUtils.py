@@ -100,13 +100,13 @@ def expandAmbiguity(dna):
             seqs = newSeqs
     return seqs
 
-def readPrimers(path, display=False, addRc=True, addRandom=True):
+def readPrimers(path, display=False, addRc=True, addRandom=True, expandAmbiguous=True):
     primers = []
     if display:
         print("Reading primers: " + path)
     for primer in SeqIO.parse(path, "fasta"):
         # The PairwiseAligner can't handle ambiguity codes, so expand out to multiple records
-        seqs = expandAmbiguity(primer.seq)
+        seqs = expandAmbiguity(primer.seq) if expandAmbiguous else [primer.seq]
         if len(seqs) > 1:
             for i, s in enumerate(seqs):
                 sfx = "." + str(i)
@@ -149,13 +149,14 @@ def computeOverlap(hit1, hit2):
     return o if o > 0 else 0
 
 def getPrimerAligner():
-    return Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
+    aligner = Align.PairwiseAligner(mode='local', match_score=1, mismatch_score=0, gap_score=-1)
+    return aligner
 
 # Given a sequencing read, compute and return a list of primer match hits
 # If allowOverlaps is true then overlapping results will be retained as long as their primer ID
 # isn't the same up until the first "-" character.
-def computePrimerHits(read, primers, allowOverlaps=False, matchThreshold=MATCH_THRESHOLD):
-    aligner = getPrimerAligner()
+def computePrimerHits(read, primers, allowOverlaps=False, matchThreshold=MATCH_THRESHOLD, aligner=None):
+    aligner = getPrimerAligner() if aligner is None else aligner
     hits = []
     global primer_hits_to_print
     for primer in primers:
@@ -191,7 +192,7 @@ def computePrimerHits(read, primers, allowOverlaps=False, matchThreshold=MATCH_T
                 # Mask out the matched region
                 if seqToMatch==read.seq:
                     seqToMatch=MutableSeq(read.seq)
-                seqToMatch[hit.start:hit.end] = "N" * (hit.end-hit.start)
+                seqToMatch[hit.start:hit.end] = "X" * (hit.end-hit.start)
     # Remove redundant hits that are lower scoring
     hits.sort(key=lambda h: h.mr, reverse=True)
     trimmedHits = []
