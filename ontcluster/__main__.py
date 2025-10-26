@@ -25,6 +25,20 @@ def build_parser() -> argparse.ArgumentParser:
         default=None,
         help="Directory for cluster FASTQ files (defaults to FASTQ directory).",
     )
+    parser.add_argument(
+        "-m",
+        "--max-clusters",
+        type=int,
+        default=100,
+        help="Maximum number of clusters to create (default: 100).",
+    )
+    parser.add_argument(
+        "-c",
+        "--consensus-fasta",
+        type=Path,
+        default=None,
+        help="Optional FASTA file to write cluster consensus sequences.",
+    )
     return parser
 
 
@@ -35,7 +49,9 @@ def main(argv: list[str] | None = None) -> int:
         reference=args.reference,
         fastq_path=args.fastq,
         threshold=args.threshold,
+        max_clusters=args.max_clusters,
         output_dir=args.output_dir,
+        consensus_fasta=args.consensus_fasta,
     )
     for line in result.summary_lines():
         print(line)

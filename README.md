@@ -58,8 +58,11 @@ PYTHONPATH=. pytest ontcluster/tests
 ## Command-Line Usage
 
 ```bash
-python -m ontcluster reference.fasta reads.fastq --threshold 0.05
+python -m ontcluster reference.fasta reads.fastq \
+  --threshold 0.05 --max-clusters 200 --consensus-fasta cluster-consensus.fa
 ```
 
-Cluster FASTQ files will be written alongside the input FASTQ, and a short
-summary is printed to standard output.
+Cluster FASTQ files will be written alongside the input FASTQ (or inside
+`--output-dir` if supplied). When `--consensus-fasta` is provided, each
+cluster's consensus sequence is also written to the specified FASTA file.
+The tool prints a short summary to standard output.
