@@ -20,7 +20,7 @@ def test_makepileup_counts_matches_and_snps():
 
     assert pileup.total_reads == 2
     assert pileup.unaligned_reads == 0
-    assert pileup.variation_count() == 5
+    assert pileup.option_count() == 1
     assert pileup.get_variation_count(0, BaseVariation("A")) == 2
     assert pileup.get_variation_count(1, BaseVariation("C")) == 1
     assert pileup.get_variation_count(1, BaseVariation("G")) == 1
@@ -38,7 +38,7 @@ def test_makepileup_detects_deletions_and_insertions():
     ]
     pileup = MakePileup(reference, reads)
 
-    assert pileup.variation_count() == 8
+    assert pileup.option_count() == 4
     assert pileup.get_variation_count(1, DeletionVariation()) == 1
     assert pileup.get_variation_count(3, InsertionVariation("T")) == 1
     assert pileup.get_variation_count(1, InsertionVariation("T")) == 1
@@ -76,7 +76,7 @@ def test_read_pileup_intersect_returns_allowed_variants():
     reference = Seq("ACGT")
     read = SeqRecord(Seq("AGGTT"))
     pileup = MakePileup(reference, [SeqRecord(reference), read])
-    assert pileup.variation_count() == 6
+    assert pileup.option_count() == 2
     consensus = ReadPileupIntersect(pileup, read)
     assert consensus == Seq("AGGTT")
 
@@ -84,7 +84,7 @@ def test_read_pileup_intersect_returns_allowed_variants():
 def test_read_pileup_intersect_filters_disallowed_variants():
     reference = Seq("ACGT")
     pileup = MakePileup(reference, [SeqRecord(reference)])
-    assert pileup.variation_count() == 4
+    assert pileup.option_count() == 0
     assert pileup.get_variation_count(1, BaseVariation("C")) == 1
     read = SeqRecord(Seq("AGGT"))
     consensus = ReadPileupIntersect(pileup, read)
@@ -93,7 +93,7 @@ def test_read_pileup_intersect_filters_disallowed_variants():
 
 def test_read_pileup_intersect_requires_full_coverage():
     pileup = Pileup(Seq("ACGT"))
-    assert pileup.variation_count() == 0
+    assert pileup.option_count() == 0
     read = SeqRecord(Seq("ACG"))
     assert ReadPileupIntersect(pileup, read) is None
 

@@ -78,8 +78,13 @@ class Pileup:
         variation = InsertionVariation(sequence)
         self._add_variation(index, variation)
 
-    def variation_count(self) -> int:
-        return sum(len(slot) for slot in self.variation_counts)
+    def option_count(self) -> int:
+        total = 0
+        for slot in self.variation_counts:
+            options = len(slot)
+            if options > 1:
+                total += options - 1
+        return total
 
     def filtered(self, threshold: float) -> "Pileup":
         filtered = Pileup(self.reference)
@@ -88,9 +93,10 @@ class Pileup:
         for index, slot in enumerate(self.variation_counts):
             for variation, count in slot.items():
                 # Keep variations that meet the frequency threshold.
-                # Note that we don't take the total variations at this position as that would
-                # double-count insertions.
-                if count / self.total_reads >= threshold:
+                # Count all variations at this position but don't include insertions because
+                # those are effectively after this position (and so would get double-counted).
+                total_count = sum(count for var, count in slot.items() if not isinstance(var, InsertionVariation))
+                if count / total_count >= threshold:
                     filtered.variation_counts[index][variation] = count
         return filtered
 
@@ -232,7 +238,7 @@ def MakePileup(
         read_seq = str(read.seq)
         _validate_sequence(read_seq)
         alignment = aligner.align(str(pileup.reference), read_seq)
-        if not alignment or alignment.score <= 0:
+        if alignment.score <= 0:
             pileup.unaligned_reads += 1
             continue
         aligned = alignment[0]
@@ -244,6 +250,10 @@ def MakePileup(
             pileup.unaligned_reads += 1
             continue
         _process_alignment_with_coordinates(pileup, read_seq, coords)
+    if pileup.total_reads and pileup.unaligned_reads > pileup.total_reads / 2:
+        raise ValueError(
+            f"More than half the reads failed to align ({pileup.unaligned_reads}/{pileup.total_reads})."
+        )
     return pileup
 
 
@@ -260,7 +270,7 @@ def ReadPileupIntersect(
 ) -> Optional[Seq]:
     aligner = aligner or _default_aligner()
     alignment = aligner.align(str(pileup.reference), str(read.seq))
-    if not alignment or alignment.score <= 0:
+    if alignment.score <= 0:
         return None
     if len(read.seq) < len(pileup):
         return None

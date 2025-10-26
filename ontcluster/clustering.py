@@ -17,7 +17,7 @@ from .pileup import DenoisePileup, MakePileup, Pileup, ReadPileupIntersect, _def
 class ClusterResult:
     total_reads: int
     unaligned_reads: int
-    variation_count: int
+    option_count: int
     clusters: Dict[int, Seq]
     cluster_counts: Dict[int, int] = field(default_factory=dict)
     output_files: Dict[int, Path] = field(default_factory=dict)
@@ -26,7 +26,7 @@ class ClusterResult:
     def summary_lines(self) -> Iterable[str]:
         yield f"Processed reads: {self.total_reads}"
         yield f"Unaligned reads: {self.unaligned_reads}"
-        yield f"Denoised variations: {self.variation_count}"
+        yield f"Denoised options: {self.option_count}"
         yield f"Total clusters: {len(self.clusters)}"
         for cluster_id in sorted(self.cluster_counts):
             count = self.cluster_counts[cluster_id]
@@ -88,10 +88,10 @@ def cluster_fastq(
         # Pass 1: build and denoise pileup
         pileup = MakePileup(ref_seq, _fastq_records(fastq_path), aligner=aligner)
         denoised = DenoisePileup(pileup, threshold)
-        variation_count = denoised.variation_count()
+        option_count_value = denoised.option_count()
         print(f"Processed reads: {pileup.total_reads}", file=sys.stderr)
         print(f"Unaligned reads: {pileup.unaligned_reads}", file=sys.stderr)
-        print(f"Denoised variations: {variation_count}", file=sys.stderr)
+        print(f"Denoised options: {option_count_value}", file=sys.stderr)
 
         # Pass 2: discover clusters
         cluster_map: Dict[str, int] = {}
@@ -119,7 +119,7 @@ def cluster_fastq(
             return ClusterResult(
                 total_reads=pileup.total_reads,
                 unaligned_reads=pileup.unaligned_reads,
-                variation_count=variation_count,
+                option_count=option_count_value,
                 clusters={},
                 consensus_fasta=consensus_path,
             )
@@ -159,7 +159,7 @@ def cluster_fastq(
         return ClusterResult(
             total_reads=pileup.total_reads,
             unaligned_reads=pileup.unaligned_reads,
-            variation_count=variation_count,
+            option_count=option_count_value,
             clusters=clusters,
             cluster_counts=cluster_counts,
             output_files=output_files,
